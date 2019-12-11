@@ -1,6 +1,7 @@
 # Note: If you get errors where ibapi is not found, go the c:TWS_API.
 # In the source->pythonclient, run 'python setup.py install'
 # This should resolve any issues
+from ibapi.execution import Execution
 from ibapi.order import Order
 from ibapi.order_state import OrderState
 from ibapi.wrapper import EWrapper
@@ -12,6 +13,12 @@ from ibapi.ticktype import *
 
 
 class BasicApp(EWrapper, EClient):
+    # list of current orders (manually entered)
+    orderListManual:list = {}
+
+    # list of current orders (API generated)
+    orderListAPI:list = {}
+
     def __init__(self):
         print("Initializing IB EClient")
         EClient.__init__(self, self)
@@ -19,6 +26,11 @@ class BasicApp(EWrapper, EClient):
     def error(self, reqId: TickerId, errorCode: int, errorString: str):
         print('Error:', reqId, " ", errorCode, " ", errorString)
 
+    def nextValidId(self, orderId:int):
+        print("Next Valid ID:", orderId)
+
+# Anything that has to do with IB price data
+#region IB Tick Events
     @iswrapper
     def tickPrice(self, reqId: TickerId, tickType: TickType, price: float, attrib: TickAttrib):
         super().tickPrice(reqId, tickType, price, attrib)
@@ -40,6 +52,8 @@ class BasicApp(EWrapper, EClient):
         super().tickGeneric(reqId, tickType, value)
         print("Tick Generic. Ticker Id:", reqId, "tickType:", tickType, "Value:", value)
 
+#endregion
+
     @iswrapper
     def openOrder(self, orderId: int, contract: Contract, order: Order, orderstate: OrderState):
         print("OrderId=", orderId, "Symbol=", contract.symbol, "OrderState=", orderstate.status)
@@ -49,6 +63,13 @@ class BasicApp(EWrapper, EClient):
         super().openOrderEnd()
         print("=== All Orders Retrived ===")
 
+# Anything that has to do with IB order management
+#region IB Order/Execution Events
+    @iswrapper
+    def execDetails(self, reqId:int, contract:Contract, execution:Execution):
+        print("ExecDetails. ReqId:", reqId, "Symbol:", contract.symbol, "SecType:", contract.secType, "Currency:",
+              contract.currency, execution)
+#endregion
 
 def main():
     print("ibapp.py V1.0");

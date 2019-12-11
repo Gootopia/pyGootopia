@@ -2,8 +2,8 @@ import threading
 def threadTest():
     print("The Thread!")
 
-def test1():
-    print("Hello")
-    t=threading.Thread(group=None,target=threadTest,name="Porkins")
-    t.start()
+def test1(mystring:str):
+    print(mystring)
 
+def test2(myfunc):
+    myfunc()
