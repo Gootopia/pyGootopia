@@ -1,9 +1,17 @@
-import threading
-def threadTest():
-    print("The Thread!")
+from pyIB.ib.ibfunc import ibfunc
 
-def test1(mystring:str):
-    print(mystring)
 
-def test2(myfunc):
-    myfunc()
+
+def main():
+    print("Starting")
+    ibf=ibfunc()
+    try:
+        print(ibf.ibc.isConnected())
+    except AttributeError:
+        print("Attribute Error!")
+
+    print("TIME TO MAKE SOME BENJAMINS!!!!!")
+
+if __name__ == '__main__':
+    main()
+

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55e186c8-4b50-4a99-86ed-e5afcb1bf49b" name="Default Changelist" comment="" />
+    <list default="true" id="9450614e-ab81-4a16-b9d2-77938772420c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,14 +10,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1Uhkstpo9lAP3UHfr772kfe8daE" />
+  <component name="ProjectId" id="1UkYMHxzUqDXoOTqR3HjWyywvnU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,66 +32,23 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Gootopia\Desktop\GITHUB\pyGootopia" />
-      <recent name="C:\Users\Gootopia\Desktop\GITHUB\pyGootopia\pyGootopia\ib" />
+      <recent name="C:\Users\Gootopia\Desktop\GITHUB\pyIB" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ibfunc">
-    <configuration name="ib" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pyGootopia" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyGootopia/ib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyGootopia/ib/ib.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ibapp" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pyGootopia" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ib/ibapp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.sandbox2">
     <configuration name="ibfunc" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pyGootopia" />
+      <module name="pyIB" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ib" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyIB/ib" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ib/ibfunc.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyIB/ib/ibfunc.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,19 +57,40 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pyGootopia" />
+    <configuration name="sandbox" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyIB" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ib" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ib/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sandbox.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sandbox2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyIB" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sandbox2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,10 +101,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.sandbox2" />
+        <item itemvalue="Python.sandbox" />
         <item itemvalue="Python.ibfunc" />
-        <item itemvalue="Python.ibapp" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.ib" />
       </list>
     </recent_temporary>
   </component>
@@ -146,54 +124,73 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="55e186c8-4b50-4a99-86ed-e5afcb1bf49b" name="Default Changelist" comment="" />
-      <created>1575816425980</created>
+      <changelist id="9450614e-ab81-4a16-b9d2-77938772420c" name="Default Changelist" comment="" />
+      <created>1575902011036</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575816425980</updated>
+      <updated>1575902011036</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2472" y="200" key="#Notifications" timestamp="1575816637340">
+    <state x="2472" y="200" key="#Notifications" timestamp="1576071690813">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2472" y="200" key="#Notifications/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575816637340" />
-    <state width="1898" height="290" key="GridCell.Tab.0.bottom" timestamp="1575900434156">
+    <state x="2472" y="200" key="#Notifications/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576071690813" />
+    <state x="2730" y="292" key="#xdebugger.XInspectDialog" timestamp="1576076393679">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1898" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575900434156" />
-    <state width="1898" height="290" key="GridCell.Tab.0.center" timestamp="1575900434156">
+    <state x="2730" y="292" key="#xdebugger.XInspectDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576076393679" />
+    <state x="2660" y="297" key="FileChooserDialogImpl" timestamp="1576849589437">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1898" height="290" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575900434156" />
-    <state width="1898" height="290" key="GridCell.Tab.0.left" timestamp="1575900434156">
+    <state x="2660" y="297" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576849589437" />
+    <state width="1893" height="250" key="GridCell.Tab.0.bottom" timestamp="1579531167995">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1893" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
+    <state width="1898" height="411" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
+    <state width="1893" height="250" key="GridCell.Tab.0.center" timestamp="1579531167995">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1893" height="250" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
+    <state width="1898" height="411" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
+    <state width="1893" height="250" key="GridCell.Tab.0.left" timestamp="1579531167995">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1893" height="250" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
+    <state width="1898" height="411" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
+    <state width="1893" height="250" key="GridCell.Tab.0.right" timestamp="1579531167995">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1893" height="250" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
+    <state width="1898" height="411" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
+    <state width="1898" height="358" key="GridCell.Tab.1.bottom" timestamp="1576938151815">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1898" height="290" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575900434156" />
-    <state width="1898" height="290" key="GridCell.Tab.0.right" timestamp="1575900434156">
+    <state width="1898" height="358" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151815" />
+    <state width="1898" height="358" key="GridCell.Tab.1.center" timestamp="1576938151814">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1898" height="290" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575900434156" />
-    <state width="1898" height="358" key="GridCell.Tab.1.bottom" timestamp="1575899902744">
+    <state width="1898" height="358" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151814" />
+    <state width="1898" height="358" key="GridCell.Tab.1.left" timestamp="1576938151814">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575899902744" />
-    <state width="1898" height="358" key="GridCell.Tab.1.center" timestamp="1575899902743">
+    <state width="1898" height="358" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151814" />
+    <state width="1898" height="358" key="GridCell.Tab.1.right" timestamp="1576938151815">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575899902743" />
-    <state width="1898" height="358" key="GridCell.Tab.1.left" timestamp="1575899902743">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575899902743" />
-    <state width="1898" height="358" key="GridCell.Tab.1.right" timestamp="1575899902743">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575899902743" />
-    <state width="968" height="548" key="XDebugger.FullValuePopup" timestamp="1575821439190">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="968" height="548" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575821439190" />
+    <state width="1898" height="358" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151815" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
