@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9450614e-ab81-4a16-b9d2-77938772420c" name="Default Changelist" comment="" />
+    <list default="true" id="9450614e-ab81-4a16-b9d2-77938772420c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/TheGoonior.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ib/iberror.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pyIB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pyIB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ib/ibapp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ib/ibcphttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/ibclientportal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ib/iberr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ib/ibfunc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ib/test/test_ibcphttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/test/test_ibcphttp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox2.py" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox2.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,8 +40,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -133,57 +148,64 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2472" y="200" key="#Notifications" timestamp="1576071690813">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="540" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606085127947">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="200" key="#Notifications/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576071690813" />
-    <state x="2730" y="292" key="#xdebugger.XInspectDialog" timestamp="1576076393679">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="540" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1606085127947" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605192371790">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2730" y="292" key="#xdebugger.XInspectDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576076393679" />
-    <state x="2660" y="297" key="FileChooserDialogImpl" timestamp="1576849589437">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605192371790" />
+    <state x="739" y="262" key="FileChooserDialogImpl" timestamp="1606023465086">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="297" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576849589437" />
-    <state width="1893" height="250" key="GridCell.Tab.0.bottom" timestamp="1579531167995">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="739" y="262" key="FileChooserDialogImpl/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1606023465086" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1605190811218">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
-    <state width="1898" height="411" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
-    <state width="1893" height="250" key="GridCell.Tab.0.center" timestamp="1579531167995">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811218" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1605190811218">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="250" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
-    <state width="1898" height="411" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
-    <state width="1893" height="250" key="GridCell.Tab.0.left" timestamp="1579531167995">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811218" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1605190811218">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="250" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
-    <state width="1898" height="411" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
-    <state width="1893" height="250" key="GridCell.Tab.0.right" timestamp="1579531167995">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811218" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1605190811218">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="250" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579531167995" />
-    <state width="1898" height="411" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577373733264" />
-    <state width="1898" height="358" key="GridCell.Tab.1.bottom" timestamp="1576938151815">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811218" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1605190811214">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151815" />
-    <state width="1898" height="358" key="GridCell.Tab.1.center" timestamp="1576938151814">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811214" />
+    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1605190811214">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151814" />
-    <state width="1898" height="358" key="GridCell.Tab.1.left" timestamp="1576938151814">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811214" />
+    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1605190811213">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151814" />
-    <state width="1898" height="358" key="GridCell.Tab.1.right" timestamp="1576938151815">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811213" />
+    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1605190811214">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="358" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1576938151815" />
+    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605190811214" />
+    <state x="463" y="165" key="SettingsEditor" timestamp="1605189044343">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040/-1920.58.1920.1040@0.0.1920.1040" timestamp="1605189044343" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sandbox2.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
