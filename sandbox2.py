@@ -1,9 +1,9 @@
-from pyIB.ib.ibcphttp import ibcphttp
-from pyIB.ib.iberr import IBError
+# sandbox2.py
+from ib.ibclientportal import IbClientPortal
 
 
 def main():
-    cp=ibcphttp()
+    cp = IbClientPortal()
     resp = cp.post(cp.Endpoints.Status)
     print(resp.json())
     print('done')
