@@ -1,11 +1,12 @@
 # sandbox2.py
-from ib.ibclientportal import IbClientPortal
+# Sandbox for testing various client functions
+from ib.ibclientportal import IBClientPortal
 
 
 def main():
-    cp = IbClientPortal()
-    resp = cp.post(cp.Endpoints.Status)
-    print(resp.json())
+    resp = IBClientPortal.clientrequest_status()
+    print(resp.statusCode)
+    print(resp.json)
     print('done')
 
 

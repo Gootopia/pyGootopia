@@ -4,11 +4,13 @@
 # Swagger can be used to test client requests: https://interactivebrokers.github.io/cpwebapi/swagger-ui.html
 # Consult curl.trillworks.com for conversion of curl commands to Python requests
 import requests
-from enum import Enum
+import os
+import subprocess
 from ib.iberror import IBError
+from ib.ib_endpoints import IBEndpoints
 
 
-class IbClientPortal:
+class IBClientPortal:
     # used for ib client portal JSON GET/POST requests
     headers = {'accept': 'application/json'}
 
@@ -18,70 +20,88 @@ class IbClientPortal:
 
     # Results of endpoint requests
     class RequestResult:
+        # Decoded message for error
         error: IBError
+        # Client portal Web Error Code
+        statusCode: int
+        # Client Portal JSON string
         json: str
-
-    # Supported endpoints. See IB API docs
-    class Endpoints(Enum):
-        Blank = ''
-        Status = '/iserver/auth/status'
-        Trades = '/iserver/account/trades'
 
     # constructor
     def __init__(self):
         pass
 
-    # URL string builder. Separate function so it's testable
-    @staticmethod
-    def build_endpoint_url(self, endpoint: Endpoints):
-        url = ibcphttp.apiUrlBase + endpoint.value
-        return url
-
     # Request to get client status
-    def clientrequest_status(self):
-        return self.clientrequest_generic_post(ibcphttp.Endpoints.Status)
+    @classmethod
+    def clientrequest_status(cls):
+        return cls.clientrequest_generic_post(IBEndpoints.Status)
 
     # Request to get trades from current and previous 6 days
-    def clientrequest_trades(self):
-        return self.clientrequest_generic_get(ibcphttp.Endpoints.Trades)
+    @classmethod
+    def clientrequest_trades(cls):
+        return cls.clientrequest_generic_get(IBEndpoints.Trades)
 
     # generic client request. Call others for more specific responses and information output
-    def clientrequest_generic_get(self, endpoint: Endpoints):
-        resp = self.__get__(endpoint)
-        result = self.__errorCheck__(resp)
+    @classmethod
+    def clientrequest_generic_get(cls, endpoint: IBEndpoints):
+        resp = cls.__get(endpoint)
+        result = cls.__error_check(resp, )
         return result
 
     # generic client request. Call others for more specific responses and information output
-    def clientrequest_generic_post(self, endpoint: Endpoints):
-        resp = self.__post__(endpoint)
-        result = self.__errorCheck__(resp)
+    @classmethod
+    def clientrequest_generic_post(cls, endpoint: IBEndpoints):
+        resp = cls.__post(endpoint)
+
+        result = cls.__error_check(resp)
         return result
+
+    # URL string builder. Separate function so it's testable
+    @staticmethod
+    def __build_endpoint_url(endpoint: IBEndpoints):
+        url = IBClientPortal.apiUrlBase + endpoint.value
+        return url
 
     # submit GET request to portal API
-    def __get__(self, endpoint: Endpoints, data: str = ''):
-        cpurl = self.build_endpoint_url(self, endpoint)
+    @classmethod
+    def __get(cls, endpoint: IBEndpoints):
+        cpurl = cls.__build_endpoint_url(endpoint)
         print(f'Portal: {cpurl}')
+        resp = None
         # Without verify=False, we get issues with untrusted SSL certificates
         # This should be ok for demo accounts, but need to follow up on this for live accounts
         # See https://stackoverflow.com/questions/10667960/python-requests-throwing-sslerror
         # resp is the web response. Use resp.json() to get the client request specific response
         # resp = requests.post(cpurl, headers=self.headers, json=data, verify=False)
-        resp = requests.get(cpurl, headers=self.headers, verify=False)
+        try:
+            resp = requests.get(cpurl, headers=cls.headers, verify=False)
+
+        except requests.exceptions.ConnectionError as e:
+            print("==== GATEWAY NOT STARTED! ====")
+
         return resp
 
     # submit POST request to portal API
-    def __post__(self, endpoint: Endpoints, data: str = ''):
-        cpurl = self.build_endpoint_url(self, endpoint)
+    @classmethod
+    def __post(cls, endpoint: IBEndpoints, data: str = ''):
+        cpurl = cls.__build_endpoint_url(endpoint)
         print(f'Portal: {cpurl}')
+        resp = None
         # Without verify=False, we get issues with untrusted SSL certificates
         # This should be ok for demo accounts, but need to follow up on this for live accounts
         # See https://stackoverflow.com/questions/10667960/python-requests-throwing-sslerror
         # resp is the web response. Use resp.json() to get the client request specific response
-        resp = requests.post(cpurl, headers=self.headers, json=data, verify=False)
+        try:
+            resp = requests.post(cpurl, headers=cls.headers, json=data, verify=False)
+
+        except requests.exceptions.ConnectionError as e:
+            print("==== GATEWAY NOT STARTED! ====")
+
         return resp
 
     # Generic error checking needed for all portal requests. Should call this after each function
-    def __errorCheck__(self, resp):
+    @staticmethod
+    def __error_check(resp):
         error = IBError.No_Error
 
         # If Ok = False, there was a problem submitting the request
@@ -92,8 +112,9 @@ class IbClientPortal:
             # conversion to give the request specific json results
             json = resp.json()
 
-        result = ibcphttp.RequestResult()
+        result = IBClientPortal.RequestResult()
         result.error = error
+        result.statusCode = resp.status_code
         result.json = json
         return result
 

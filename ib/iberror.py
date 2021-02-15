@@ -9,5 +9,5 @@ class IBError(Enum):
     Invalid_URL = 2
 
 
-def testfunc(n):
-    return n
+if __name__ == '__main__':
+    print("=== iberror.py ===")
