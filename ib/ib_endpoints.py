@@ -6,5 +6,13 @@ from enum import Enum
 
 class IBEndpoints(Enum):
     Blank = ''
-    Status = '/iserver/auth/status'
+    # SESSION ENDPOINTS
+    Ping = '/tickle'
+    AuthenticationStatus = '/iserver/auth/status'
+    Reauthenticate = '/iserver/reauthenticate'
+    Validate = '/sso/validate'
+    # TRADE ENDPOINTS
     Trades = '/iserver/account/trades'
+
+    # ACCOUNT ENDPOINTS
+    BrokerageAccounts = '/iserver/accounts'

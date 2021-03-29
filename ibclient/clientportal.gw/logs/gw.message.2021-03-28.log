@@ -1,0 +1,1734 @@
+-> GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+<- 200 GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+-> GET /stylesheet/web/bootstrap.v3.3.6.css
+-> GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+<- 200 GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+-> GET /stylesheet/web/font-awesome.v4.7.0.css
+<- 200 GET /stylesheet/web/font-awesome.v4.7.0.css
+-> GET /stylesheet/web/switchery.min.css
+<- 200 GET /stylesheet/web/bootstrap.v3.3.6.css
+<- 200 GET /stylesheet/web/switchery.min.css
+-> GET /stylesheet/web/ib-common.css
+<- 200 GET /stylesheet/web/ib-common.css
+-> GET /stylesheet/web/login.css
+-> GET /sso/Templates/otp-responsive.css?1616972533152
+<- 200 GET /stylesheet/web/login.css
+-> GET /scripts/common/js/2015/bootstrap-switch.min.js
+-> GET /scripts/common/js/switchery.min.js
+<- 200 GET /scripts/common/js/2015/bootstrap-switch.min.js
+<- 200 GET /sso/Templates/otp-responsive.css?1616972533152
+-> GET /sso/CombineFiles
+-> GET /scripts/common/js/2015/jquery.min.js
+<- 200 GET /scripts/common/js/2015/jquery.min.js
+<- 200 GET /sso/CombineFiles
+-> GET /scripts/common/js/2015/bootstrap.min.js
+-> GET /scripts/common/js/jquery-ui-1.12.1.min.js
+<- 200 GET /scripts/common/js/switchery.min.js
+<- 200 GET /scripts/common/js/2015/bootstrap.min.js
+-> GET /images/2015/btn-app-apple.png
+<- 200 GET /scripts/common/js/jquery-ui-1.12.1.min.js
+<- 200 GET /images/2015/btn-app-apple.png
+-> GET /images/2015/btn-app-google.png
+-> GET /images/2015/btn-app-tws.png
+-> GET /images/2015/button_discover_apis.png
+-> GET /images/2015/template/logo-ib-ibkr-txtwht.svg
+<- 200 GET /images/2015/btn-app-google.png
+<- 200 GET /images/2015/btn-app-tws.png
+-> GET /images/2015/template/logo-ib-ibkr-txtblk.svg
+<- 200 GET /images/2015/button_discover_apis.png
+-> GET /fonts/Proxima-Nova-Light.woff2
+-> GET /fonts/fontawesome-webfont.woff2?v=4.6.1
+-> GET /fonts/Proxima-Nova-Semibold.woff2
+-> GET /fonts/Proxima-Nova-Regular.woff2
+<- 200 GET /images/2015/template/logo-ib-ibkr-txtblk.svg
+<- 200 GET /fonts/Proxima-Nova-Light.woff2
+<- 200 GET /fonts/fontawesome-webfont.woff2?v=4.6.1
+<- 200 GET /images/2015/template/logo-ib-ibkr-txtwht.svg
+<- 200 GET /fonts/Proxima-Nova-Regular.woff2
+<- 200 GET /fonts/Proxima-Nova-Semibold.woff2
+-> GET /images/2015/template/home-screen-icon-128x128.png
+<- 200 GET /images/2015/template/home-screen-icon-128x128.png
+-> POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?30745
+<- 200 POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?30745
+-> POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?35754
+<- 200 POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?35754
+-> POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?38696
+<- 200 POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?38696
+-> POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?81849
+<- 200 POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?81849
+-> POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?35316
+<- 200 POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?35316
+-> POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?48301
+<- 200 POST /sso/Authenticator;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet?48301
+-> POST /sso/Dispatcher;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet
+<- 302 POST /sso/Dispatcher;jsessionid=D12754307F3AAA52CBB3FDC9C1CBC9DF.cwwwdam2-internet
+-> request: /v1/api/sso/validate?gw=1
+-> request: /AccountManagement/OneBarAuthentication?json=1
+-> GET /AccountManagement/OneBarAuthentication?json=1,404|304ms
+-> GET /v1/api/sso/validate?gw=1,200|339ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=8406a82523f249c9c2fe7d661b4b09a5710899d27bdf490c8afbcc861741e5ce020d1459dc22d84f6bc135793bf620170793035da107bdfa12e4fca3ab612693&CHRESPONSE=71c5c7470324cac1927fb0deebbaa87d04e96b9d
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=8406a82523f249c9c2fe7d661b4b09a5710899d27bdf490c8afbcc861741e5ce020d1459dc22d84f6bc135793bf620170793035da107bdfa12e4fca3ab612693&CHRESPONSE=71c5c7470324cac1927fb0deebbaa87d04e96b9d
+-> GET /v1/api/one/user,200|839ms
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|93ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10099ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|405ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|579ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=3fddc4ddc1287e56f069a80831992539ae362ec854562528b3698c771c981aa6dbb83200635e8798a096f577410bd5f821cfcc0553533f839a18bf898f46ca5b&CHRESPONSE=ac5cf087162ff468495bc769fcc21928aa6050fa
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=3fddc4ddc1287e56f069a80831992539ae362ec854562528b3698c771c981aa6dbb83200635e8798a096f577410bd5f821cfcc0553533f839a18bf898f46ca5b&CHRESPONSE=ac5cf087162ff468495bc769fcc21928aa6050fa
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|93ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10091ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /sso/ping
+-> GET /sso/ping,200|390ms
+-> request: /sso/ping
+-> GET /sso/ping,200|1761ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|168ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|570ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=1a5c12d4fe37bea0891a8dd313ce03220c4f975a0f5457e95a2b67536f3b78e253da38f04427e460171d7e09598544b4561549424ec04628c235de92db81e95e&CHRESPONSE=b9defe3502bd5b048e77e010e3abaf8cccc31341
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=1a5c12d4fe37bea0891a8dd313ce03220c4f975a0f5457e95a2b67536f3b78e253da38f04427e460171d7e09598544b4561549424ec04628c235de92db81e95e&CHRESPONSE=b9defe3502bd5b048e77e010e3abaf8cccc31341
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|102ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10097ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|99ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|271ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=15e366b130e16bc935c2a59e93d20684b58b2dd432411485033f25de853f971d5f7647cf9a173c963089744ecdce5f2230377f4634e4a264d4abae0ec863b4c4&CHRESPONSE=d8bd6d424a8859c2a2098a842b486ac9083b7bf9
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=15e366b130e16bc935c2a59e93d20684b58b2dd432411485033f25de853f971d5f7647cf9a173c963089744ecdce5f2230377f4634e4a264d4abae0ec863b4c4&CHRESPONSE=d8bd6d424a8859c2a2098a842b486ac9083b7bf9
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|97ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10099ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|103ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|267ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=115505c1293d6119c849d7bd968467ce4806bc710fb0f499f2c6a009c1089b25432532a1200623dfdf250f5c5df5fc92494637d949ebeedb4017d3219bd79087&CHRESPONSE=273d03d192e10d698a84abe96c4d642eb4fe3f45
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=115505c1293d6119c849d7bd968467ce4806bc710fb0f499f2c6a009c1089b25432532a1200623dfdf250f5c5df5fc92494637d949ebeedb4017d3219bd79087&CHRESPONSE=273d03d192e10d698a84abe96c4d642eb4fe3f45
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|669ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10159ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|96ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|270ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=623588b8afac9578ad335c16c981165614bd38261962e4b70333dacc36a67194b5843c828f3163bf61e5857baf6f21695b31a342c88ca8615f8b38e53086c8a1&CHRESPONSE=3b97214604a8c91c1a1e219401d486015efb5447
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=623588b8afac9578ad335c16c981165614bd38261962e4b70333dacc36a67194b5843c828f3163bf61e5857baf6f21695b31a342c88ca8615f8b38e53086c8a1&CHRESPONSE=3b97214604a8c91c1a1e219401d486015efb5447
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|94ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10102ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|100ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|266ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=552dd205f7761ef04438bbb94261dc76145dda57f2332e4a2999ca6ca509ad045100dc1f00c38e5a0beae2c8c2d81673e09188c4cd9f35052691837c3d384358&CHRESPONSE=f2df25e98207a3a1a4568bfb260300cac3262143
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=552dd205f7761ef04438bbb94261dc76145dda57f2332e4a2999ca6ca509ad045100dc1f00c38e5a0beae2c8c2d81673e09188c4cd9f35052691837c3d384358&CHRESPONSE=f2df25e98207a3a1a4568bfb260300cac3262143
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|94ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,500|104ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|96ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=2a637f6441d4bd31af369496f52d098053d1e3ffbe69bb4ff7b509e3ce9c0290a41e52521a9b5424d5eeb216872310ed9e5ffa958e798d6a90c95e5359d10682&CHRESPONSE=d8fbbfa133619d28687971e6babe2d9fb196d988
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=2a637f6441d4bd31af369496f52d098053d1e3ffbe69bb4ff7b509e3ce9c0290a41e52521a9b5424d5eeb216872310ed9e5ffa958e798d6a90c95e5359d10682&CHRESPONSE=d8fbbfa133619d28687971e6babe2d9fb196d988
+-> GET /v1/api/one/user,200|327ms
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|91ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10112ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|101ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|252ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=a0e62b7a23e10a333d16e4bf23642236f7fe4bf5d3b8a3bcddb4eb8a184a7cf236281438d6480a60992a935fd2ccd90a5e3d0e9d577c20c988c188429aacdafa&CHRESPONSE=c7f387c62c826c5ccefdd61b29e149e17d62f9ca
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=a0e62b7a23e10a333d16e4bf23642236f7fe4bf5d3b8a3bcddb4eb8a184a7cf236281438d6480a60992a935fd2ccd90a5e3d0e9d577c20c988c188429aacdafa&CHRESPONSE=c7f387c62c826c5ccefdd61b29e149e17d62f9ca
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|96ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10111ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|165ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|310ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=ddc534551e273b4c185e0ac534da7988500e167ea25ab7f118f2800f06bcbe474a4ff78f088d95f92bf622d2f08e5b92d726f16f557a8ff7e1a405d52f25203&CHRESPONSE=211e97f09b203949e866aa82c11b87662b144617
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=ddc534551e273b4c185e0ac534da7988500e167ea25ab7f118f2800f06bcbe474a4ff78f088d95f92bf622d2f08e5b92d726f16f557a8ff7e1a405d52f25203&CHRESPONSE=211e97f09b203949e866aa82c11b87662b144617
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|104ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10103ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|99ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|248ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=1cb84d5fa3360af2079f701784186303570c5604b2643731f545deb0f04b2fe9d1880fc89369c70b6dee42844627067ee510397f39b5927266d61abfee1c6f24&CHRESPONSE=b509e1fede8ce675edf651e5abe56322f02f82af
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=1cb84d5fa3360af2079f701784186303570c5604b2643731f545deb0f04b2fe9d1880fc89369c70b6dee42844627067ee510397f39b5927266d61abfee1c6f24&CHRESPONSE=b509e1fede8ce675edf651e5abe56322f02f82af
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|84ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10098ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|94ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|273ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=15e366b130e16bc935c2a59e93d20684b58b2dd432411485033f25de853f971d5f7647cf9a173c963089744ecdce5f2230377f4634e4a264d4abae0ec863b4c4&CHRESPONSE=c482381a7e83de8146fe874b0df4cd6e6d1621ca
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=15e366b130e16bc935c2a59e93d20684b58b2dd432411485033f25de853f971d5f7647cf9a173c963089744ecdce5f2230377f4634e4a264d4abae0ec863b4c4&CHRESPONSE=c482381a7e83de8146fe874b0df4cd6e6d1621ca
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|96ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10097ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|106ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|255ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=115505c1293d6119c849d7bd968467ce4806bc710fb0f499f2c6a009c1089b25432532a1200623dfdf250f5c5df5fc92494637d949ebeedb4017d3219bd79087&CHRESPONSE=55c595b8ad5b87129ec25bdc2577dc03fc4d9ce8
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=115505c1293d6119c849d7bd968467ce4806bc710fb0f499f2c6a009c1089b25432532a1200623dfdf250f5c5df5fc92494637d949ebeedb4017d3219bd79087&CHRESPONSE=55c595b8ad5b87129ec25bdc2577dc03fc4d9ce8
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|89ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10098ms
+-> request: /sso/ping
+-> GET /sso/ping,200|379ms
+-> request: /sso/ping
+-> GET /sso/ping,200|374ms
+-> GET /v1/portal/iserver/accounts
+<- 400 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|320ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=6aa81e98fbd73133ae2d4f9607e5ca308322637ac94effb9140a383d6bafd9a99804e65308c8a89321daa2f4393e49be0b0b9b7e6ede05ce779715f9de2f94d0&CHRESPONSE=9211ab9fe40623b2c824ebe582ec8a3c6c6f5a7e
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=6aa81e98fbd73133ae2d4f9607e5ca308322637ac94effb9140a383d6bafd9a99804e65308c8a89321daa2f4393e49be0b0b9b7e6ede05ce779715f9de2f94d0&CHRESPONSE=9211ab9fe40623b2c824ebe582ec8a3c6c6f5a7e
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|95ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> GET /v1/api/one/user,200|3600ms
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10102ms
+-> GET /v1/portal/iserver/accounts
+<- 401 GET /v1/portal/iserver/accounts
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|107ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|271ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=2344b3e29d727ed872b29ea5b8532d84f99e1301fa3c3550cbbd04bd0839e36eb73267b3e188995cee61e14b8fcb6748156a19765e82b3b84c58b630aa7e280&CHRESPONSE=5392683b822e503b28212dc5e6a814ed0ce37b4e
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=2344b3e29d727ed872b29ea5b8532d84f99e1301fa3c3550cbbd04bd0839e36eb73267b3e188995cee61e14b8fcb6748156a19765e82b3b84c58b630aa7e280&CHRESPONSE=5392683b822e503b28212dc5e6a814ed0ce37b4e
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|101ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10098ms
+-> request: /sso/ping
+-> GET /sso/ping,200|392ms
+-> request: /sso/ping
+-> GET /sso/ping,200|388ms
+-> request: /sso/ping
+-> GET /sso/ping,200|463ms
+-> request: /sso/ping
+-> GET /sso/ping,200|438ms
+-> request: /sso/ping
+-> GET /sso/ping,200|437ms
+-> request: /sso/ping
+-> GET /sso/ping,200|464ms
+-> request: /sso/ping
+-> GET /sso/ping,200|451ms
+-> request: /sso/ping
+-> GET /sso/ping,200|482ms
+-> request: /sso/ping
+-> GET /sso/ping,200|1897ms
+-> request: /sso/ping
+-> GET /sso/ping,200|580ms
+-> request: /sso/ping
+-> GET /sso/ping,200|498ms
+-> request: /sso/ping
+-> GET /sso/ping,200|581ms
+-> request: /sso/ping
+-> GET /sso/ping,200|541ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|504ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=66ce535441c80e2e915ded7cf648e265dd2cb9be5a5e08b77aedab62de35a2ddc27114d993084c421c7dd2d68ee697abf625688d32017d743b0da11e731c01b7&CHRESPONSE=a143521762e0e567fcccf9e0e10c7e8bd356cbc5
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=66ce535441c80e2e915ded7cf648e265dd2cb9be5a5e08b77aedab62de35a2ddc27114d993084c421c7dd2d68ee697abf625688d32017d743b0da11e731c01b7&CHRESPONSE=a143521762e0e567fcccf9e0e10c7e8bd356cbc5
+-> GET /v1/api/one/user,200|2364ms
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|117ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,503|10112ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|457ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|312ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=94253ad285c05e1189fef5e1b27b548b1b165f42b153eaf5b80ab72f89e4912cd9378fd317a3bf4e139ac61521189da97ca5373ad27b9538f53cdaacfddda665&CHRESPONSE=15d4f9581c0722f7eee786ddc10be4da84741459
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=94253ad285c05e1189fef5e1b27b548b1b165f42b153eaf5b80ab72f89e4912cd9378fd317a3bf4e139ac61521189da97ca5373ad27b9538f53cdaacfddda665&CHRESPONSE=15d4f9581c0722f7eee786ddc10be4da84741459
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|104ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,200|130ms
+-> request: /v1/api/iserver/auth/ssodh/response
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/response,200|118ms
+-> request: /v1/api/iserver/accounts
+-> GET /v1/api/iserver/accounts,200|112ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|455ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|449ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|552ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|547ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|433ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|551ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|457ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|501ms
+-> request: /sso/ping
+-> GET /sso/ping,200|451ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|111ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|431ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|441ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|513ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|432ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|471ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|875ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|435ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|420ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|482ms
+-> request: /sso/ping
+-> GET /sso/ping,200|416ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|103ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|476ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|549ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|499ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|633ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|572ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|406ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|463ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|809ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|449ms
+-> request: /sso/ping
+-> GET /sso/ping,200|450ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|121ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|445ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|444ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|471ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|461ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|440ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|437ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|442ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|416ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /sso/ping
+-> GET /sso/ping,200|410ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|106ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|453ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|408ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|482ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|663ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|433ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|839ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|611ms
+-> request: /sso/ping
+-> GET /sso/ping,200|724ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|153ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|449ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|487ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|434ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|424ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|476ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|475ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|426ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|421ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|711ms
+-> request: /sso/ping
+-> GET /sso/ping,200|405ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|107ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|477ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|473ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|3642ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|447ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|434ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|631ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|467ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|471ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|465ms
+-> request: /sso/ping
+-> GET /sso/ping,200|405ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|159ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|452ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> GET /v1/portal/iserver/accounts
+<- 200 GET /v1/portal/iserver/accounts
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|445ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|485ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|507ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|100ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|480ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|408ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|471ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|452ms
+-> request: /sso/ping
+-> GET /sso/ping,200|552ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|143ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|478ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|410ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|511ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|407ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|453ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|448ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|445ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|711ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|425ms
+-> request: /sso/ping
+-> GET /sso/ping,200|441ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|106ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|466ms
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|15557ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|662ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|442ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|496ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|449ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|406ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|754ms
+-> request: /sso/ping
+-> GET /sso/ping,200|408ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|111ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|546ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|444ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|757ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|411ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|578ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|443ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|450ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|484ms
+-> request: /sso/ping
+-> GET /sso/ping,200|1735ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|109ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|465ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|446ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|527ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|436ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|479ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|413ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|462ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|479ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|437ms
+-> request: /sso/ping
+-> GET /sso/ping,200|846ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|101ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|610ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|434ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|465ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|459ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|422ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|573ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|425ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|458ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1948ms
+-> request: /sso/ping
+-> GET /sso/ping,200|516ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|109ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|457ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|453ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|405ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|455ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|465ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|465ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|457ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|463ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|457ms
+-> POST /v1/portal/iserver/secdef/search
+<- 500 POST /v1/portal/iserver/secdef/search
+-> request: /sso/ping
+-> GET /sso/ping,200|305ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|111ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|727ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|473ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|769ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|480ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|610ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|456ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|858ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|2526ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|592ms
+-> request: /sso/ping
+-> GET /sso/ping,200|422ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|107ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1823ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|672ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|615ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|422ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|512ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|440ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|495ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|768ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|935ms
+-> request: /sso/ping
+-> GET /sso/ping,200|614ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|109ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|580ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|488ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,401|759ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|357ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|162ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|138ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|182ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|229ms
+-> POST /v1/portal/iserver/auth/status
+<- 401 POST /v1/portal/iserver/auth/status
+-> POST /v1/portal/iserver/auth/status
+<- 401 POST /v1/portal/iserver/auth/status
+-> POST /v1/portal/tickle
+<- 401 POST /v1/portal/tickle
+-> request: /sso/ping
+-> GET /sso/ping,200|473ms
+-> POST /v1/portal/tickle
+<- 401 POST /v1/portal/tickle
+-> request: /sso/ping
+-> GET /sso/ping,200|625ms
+-> request: /sso/ping
+-> GET /sso/ping,200|490ms
+-> request: /sso/ping
+-> GET /sso/ping,200|559ms
+-> GET /v1/portal/sso/validate
+<- 401 GET /v1/portal/sso/validate
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|488ms
+-> POST /v1/portal/iserver/auth/status
+<- 401 POST /v1/portal/iserver/auth/status
+-> POST /v1/portal/tickle
+<- 401 POST /v1/portal/tickle
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|170ms
+-> request: /sso/ping
+-> GET /sso/ping,200|106ms
+-> GET /v1/portal/sso/validate
+<- 401 GET /v1/portal/sso/validate
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,401|1248ms
+-> GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+<- 200 GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+-> GET /stylesheet/web/bootstrap.v3.3.6.css
+-> GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+<- 200 GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+-> GET /sso/Templates/otp-responsive.css?1616985347263
+-> GET /stylesheet/web/font-awesome.v4.7.0.css
+-> GET /stylesheet/web/switchery.min.css
+-> GET /stylesheet/web/ib-common.css
+-> GET /stylesheet/web/login.css
+<- 200 GET /sso/Templates/otp-responsive.css?1616985347263
+-> GET /scripts/common/js/2015/jquery.min.js
+<- 200 GET /stylesheet/web/login.css
+-> GET /scripts/common/js/jquery-ui-1.12.1.min.js
+<- 200 GET /scripts/common/js/2015/jquery.min.js
+<- 200 GET /stylesheet/web/switchery.min.css
+-> GET /scripts/common/js/2015/bootstrap.min.js
+<- 200 GET /scripts/common/js/jquery-ui-1.12.1.min.js
+<- 200 GET /stylesheet/web/font-awesome.v4.7.0.css
+<- 200 GET /stylesheet/web/ib-common.css
+<- 200 GET /stylesheet/web/bootstrap.v3.3.6.css
+-> GET /scripts/common/js/2015/bootstrap-switch.min.js
+-> GET /scripts/common/js/switchery.min.js
+<- 200 GET /scripts/common/js/2015/bootstrap.min.js
+-> GET /sso/CombineFiles
+<- 200 GET /scripts/common/js/2015/bootstrap-switch.min.js
+<- 200 GET /scripts/common/js/switchery.min.js
+<- 200 GET /sso/CombineFiles
+-> GET /images/2015/btn-app-apple.png
+<- 200 GET /images/2015/btn-app-apple.png
+-> GET /images/2015/btn-app-google.png
+<- 200 GET /images/2015/btn-app-google.png
+-> GET /images/2015/btn-app-tws.png
+<- 200 GET /images/2015/btn-app-tws.png
+-> GET /images/2015/button_discover_apis.png
+<- 200 GET /images/2015/button_discover_apis.png
+-> GET /images/2015/template/logo-ib-ibkr-txtwht.svg
+-> GET /images/2015/template/logo-ib-ibkr-txtblk.svg
+<- 200 GET /images/2015/template/logo-ib-ibkr-txtwht.svg
+-> GET /fonts/Proxima-Nova-Light.woff2
+-> GET /fonts/fontawesome-webfont.woff2?v=4.6.1
+-> GET /fonts/Proxima-Nova-Regular.woff2
+-> GET /fonts/Proxima-Nova-Semibold.woff2
+<- 200 GET /images/2015/template/logo-ib-ibkr-txtblk.svg
+<- 200 GET /fonts/Proxima-Nova-Regular.woff2
+<- 200 GET /fonts/Proxima-Nova-Light.woff2
+<- 200 GET /fonts/Proxima-Nova-Semibold.woff2
+<- 200 GET /fonts/fontawesome-webfont.woff2?v=4.6.1
+-> POST /sso/Authenticator?89147
+<- 200 POST /sso/Authenticator?89147
+-> POST /sso/Authenticator?18959
+<- 200 POST /sso/Authenticator?18959
+-> POST /sso/Dispatcher
+<- 302 POST /sso/Dispatcher
+-> request: /v1/api/sso/validate?gw=1
+-> request: /AccountManagement/OneBarAuthentication?json=1
+-> GET /AccountManagement/OneBarAuthentication?json=1,404|341ms
+-> GET /v1/api/sso/validate?gw=1,200|363ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=ec7404ebe0d789765ef2e1a0be998a7640faf84615c67c475ca1faf36cd75a5940d96fcddde61cb4ed90b04dff86934b25aac303e414899566dc6d0648c8c7f&CHRESPONSE=c74961f008ac447ff82b982b47fb7c3d8dc44927
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=ec7404ebe0d789765ef2e1a0be998a7640faf84615c67c475ca1faf36cd75a5940d96fcddde61cb4ed90b04dff86934b25aac303e414899566dc6d0648c8c7f&CHRESPONSE=c74961f008ac447ff82b982b47fb7c3d8dc44927
+-> GET /v1/api/one/user,200|152ms
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|112ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,200|131ms
+-> request: /v1/api/iserver/auth/ssodh/response
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/response,200|120ms
+-> request: /v1/api/iserver/accounts
+-> GET /v1/api/iserver/accounts,200|116ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|114ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|112ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=107c8c3d1b63c23b528901a042aafba4eb0bd66a68b527ae0b6c8879059af2434fd4db93a0789c077fd5fea5b546e266331f402c7816ffaedc4188cb5fe60398&CHRESPONSE=7235a508a97733fa55c1013ff78589d6db08b02b
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=107c8c3d1b63c23b528901a042aafba4eb0bd66a68b527ae0b6c8879059af2434fd4db93a0789c077fd5fea5b546e266331f402c7816ffaedc4188cb5fe60398&CHRESPONSE=7235a508a97733fa55c1013ff78589d6db08b02b
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|117ms
+-> request: /v1/api/iserver/accounts
+-> GET /v1/api/iserver/accounts,200|197ms
+-> GET /v1/portal/sso/validate
+uri /v1/portal/sso/validate failed
+io.vertx.core.VertxException: Connection was closed
+	at io.vertx.core.http.impl.ClientConnection.handleClosed(ClientConnection.java:406) ~[vertx-core-3.5.0.jar:na]
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:342) ~[vertx-core-3.5.0.jar:na]
+	at io.vertx.core.impl.ContextImpl.executeFromIO(ContextImpl.java:200) ~[vertx-core-3.5.0.jar:na]
+	at io.vertx.core.net.impl.VertxHandler.channelInactive(VertxHandler.java:134) ~[vertx-core-3.5.0.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelInactive(CombinedChannelDuplexHandler.java:420) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:377) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:342) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.http.HttpClientCodec$Decoder.channelInactive(HttpClientCodec.java:281) ~[netty-codec-http-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelInactive(CombinedChannelDuplexHandler.java:223) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:377) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:342) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.ssl.SslHandler.channelInactive(SslHandler.java:978) ~[netty-handler-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1354) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:917) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:763) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|453ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|633ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|754ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|444ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|435ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|705ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|447ms
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|456ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|115ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1568ms
+-> request: /sso/ping
+-> GET /sso/ping,200|125ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|424ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|434ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|3137ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|686ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|489ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|436ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|808ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/portal/sso/validate
+-> GET /v1/api/tickle,200|137ms
+<- 200 GET /v1/portal/sso/validate
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1258ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/sso/validate?gw=1
+-> request: /v1/api/tickle
+-> GET /v1/api/sso/validate?gw=1,200|462ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/tickle,200|326ms
+-> GET /v1/api/one/user,200|326ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=23d5c6004aa9fb6044a4e51ee3c973953463446032d4524c9564d11434d4e0df1b0625a574bf99c54b25bbf0ef43691d8d58cc3b2219f7f0332857bf424b394f&CHRESPONSE=7a7039cc1ef6aec7f15ef23ac4199467fbbd619d
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=23d5c6004aa9fb6044a4e51ee3c973953463446032d4524c9564d11434d4e0df1b0625a574bf99c54b25bbf0ef43691d8d58cc3b2219f7f0332857bf424b394f&CHRESPONSE=7a7039cc1ef6aec7f15ef23ac4199467fbbd619d
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|112ms
+-> request: /v1/api/iserver/accounts
+-> GET /v1/api/iserver/accounts,200|108ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|432ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|512ms
+-> POST /v1/portal/tickle
+-> request: /v1/api/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|467ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|534ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1649ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|633ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|432ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|466ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> request: /sso/ping
+-> GET /v1/api/tickle,200|102ms
+-> GET /sso/ping,200|329ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|669ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|474ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|428ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|432ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|432ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|451ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+<- 200 GET /v1/portal/sso/validate
+-> GET /v1/api/tickle,200|389ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|106ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|475ms
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|1759ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=6618ae3939a831c685f21633e2bff9ceb80521cc309594c9ab1086ad895b9e3d6aa8b7f18b827504f051cc97f5b6f4574e5f0232b296f4c9546c3a5600606e66&CHRESPONSE=25927406783f9212b2f336989dd5a205ee3cd2dc
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=6618ae3939a831c685f21633e2bff9ceb80521cc309594c9ab1086ad895b9e3d6aa8b7f18b827504f051cc97f5b6f4574e5f0232b296f4c9546c3a5600606e66&CHRESPONSE=25927406783f9212b2f336989dd5a205ee3cd2dc
+-> GET /v1/api/one/user,200|1050ms
+-> request: /v1/api/iserver/auth/status
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> GET /v1/api/iserver/auth/status,200|1113ms
+-> request: /v1/api/iserver/accounts
+-> GET /v1/api/iserver/accounts,200|119ms
+-> GET /v1/portal/sso/validate
+uri /v1/portal/sso/validate failed
+io.vertx.core.VertxException: Connection was closed
+	at io.vertx.core.http.impl.ClientConnection.handleClosed(ClientConnection.java:406) ~[vertx-core-3.5.0.jar:na]
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:342) ~[vertx-core-3.5.0.jar:na]
+	at io.vertx.core.impl.ContextImpl.executeFromIO(ContextImpl.java:200) ~[vertx-core-3.5.0.jar:na]
+	at io.vertx.core.net.impl.VertxHandler.channelInactive(VertxHandler.java:134) ~[vertx-core-3.5.0.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelInactive(CombinedChannelDuplexHandler.java:420) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:377) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:342) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.http.HttpClientCodec$Decoder.channelInactive(HttpClientCodec.java:281) ~[netty-codec-http-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelInactive(CombinedChannelDuplexHandler.java:223) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInputClosed(ByteToMessageDecoder.java:377) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelInactive(ByteToMessageDecoder.java:342) ~[netty-codec-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.handler.ssl.SslHandler.channelInactive(SslHandler.java:978) ~[netty-handler-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1354) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:917) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:763) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|466ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|487ms
+-> GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+<- 200 GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+-> GET /stylesheet/web/bootstrap.v3.3.6.css
+-> GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+<- 200 GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+-> GET /sso/Templates/otp-responsive.css?1616986607939
+<- 200 GET /stylesheet/web/bootstrap.v3.3.6.css
+<- 200 GET /sso/Templates/otp-responsive.css?1616986607939
+-> GET /stylesheet/web/font-awesome.v4.7.0.css
+<- 200 GET /stylesheet/web/font-awesome.v4.7.0.css
+-> GET /stylesheet/web/ib-common.css
+<- 200 GET /stylesheet/web/ib-common.css
+-> GET /stylesheet/web/login.css
+-> GET /stylesheet/web/switchery.min.css
+-> GET /scripts/common/js/2015/jquery.min.js
+-> GET /scripts/common/js/jquery-ui-1.12.1.min.js
+-> GET /scripts/common/js/2015/bootstrap.min.js
+-> GET /scripts/common/js/2015/bootstrap-switch.min.js
+<- 200 GET /stylesheet/web/switchery.min.css
+-> GET /scripts/common/js/switchery.min.js
+<- 200 GET /scripts/common/js/2015/bootstrap.min.js
+-> GET /sso/CombineFiles
+<- 200 GET /scripts/common/js/2015/bootstrap-switch.min.js
+<- 200 GET /scripts/common/js/switchery.min.js
+<- 200 GET /sso/CombineFiles
+<- 200 GET /stylesheet/web/login.css
+<- 200 GET /scripts/common/js/2015/jquery.min.js
+<- 200 GET /scripts/common/js/jquery-ui-1.12.1.min.js
+-> GET /images/2015/btn-app-apple.png
+<- 200 GET /images/2015/btn-app-apple.png
+-> GET /images/2015/btn-app-google.png
+<- 200 GET /images/2015/btn-app-google.png
+-> GET /images/2015/btn-app-tws.png
+-> GET /images/2015/button_discover_apis.png
+-> GET /images/2015/template/logo-ib-ibkr-txtwht.svg
+<- 200 GET /images/2015/btn-app-tws.png
+-> GET /images/2015/template/logo-ib-ibkr-txtblk.svg
+-> GET /fonts/Proxima-Nova-Light.woff2
+-> GET /fonts/fontawesome-webfont.woff2?v=4.6.1
+-> GET /fonts/Proxima-Nova-Semibold.woff2
+<- 200 GET /images/2015/button_discover_apis.png
+-> GET /fonts/Proxima-Nova-Regular.woff2
+<- 200 GET /images/2015/template/logo-ib-ibkr-txtwht.svg
+<- 200 GET /images/2015/template/logo-ib-ibkr-txtblk.svg
+<- 200 GET /fonts/Proxima-Nova-Light.woff2
+<- 200 GET /fonts/fontawesome-webfont.woff2?v=4.6.1
+<- 200 GET /fonts/Proxima-Nova-Semibold.woff2
+<- 200 GET /fonts/Proxima-Nova-Regular.woff2
+-> POST /sso/Authenticator?5514
+<- 200 POST /sso/Authenticator?5514
+-> POST /sso/Authenticator?6662
+<- 200 POST /sso/Authenticator?6662
+-> POST /sso/Dispatcher
+<- 200 POST /sso/Dispatcher
+-> GET /stylesheet/web/bootstrap.v3.3.6.css
+-> GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+-> GET /stylesheet/web/font-awesome.v4.7.0.css
+-> GET /stylesheet/web/switchery.min.css
+<- 200 GET /stylesheet/web/switchery.min.css
+-> GET /stylesheet/web/ib-common.css
+<- 200 GET /stylesheet/web/font-awesome.v4.7.0.css
+<- 200 GET /stylesheet/web/ib-common.css
+<- 200 GET /stylesheet/web/bootstrap.v3.3.6.css
+<- 200 GET /stylesheet/web/bootstrap-switch.v3.3.2.min.css
+-> GET /stylesheet/web/login.css
+-> GET /sso/Templates/otp-responsive.css?1616986619093
+<- 200 GET /stylesheet/web/login.css
+<- 200 GET /sso/Templates/otp-responsive.css?1616986619093
+-> GET /sso/CombineFiles
+<- 200 GET /sso/CombineFiles
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|414ms
+-> POST /sso/Authenticator?82923
+<- 200 POST /sso/Authenticator?82923
+-> POST /sso/Authenticator?17251
+<- 200 POST /sso/Authenticator?17251
+-> POST /sso/Dispatcher
+<- 302 POST /sso/Dispatcher
+-> request: /v1/api/sso/validate?gw=1
+-> request: /AccountManagement/OneBarAuthentication?json=1
+-> GET /v1/api/sso/validate?gw=1,200|370ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /AccountManagement/OneBarAuthentication?json=1,404|371ms
+-> GET /v1/api/one/user,200|114ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=7968bb9ec06d2667a26f870606e1294656be915555f0a3b8d4ebca5f2973c5a102543d541777246e8c24b77c488dfe095e3c93bc246013787c2a7b5257462fe7&CHRESPONSE=361088e9b188cf6b664eb592e6b247a7551ee630
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=7968bb9ec06d2667a26f870606e1294656be915555f0a3b8d4ebca5f2973c5a102543d541777246e8c24b77c488dfe095e3c93bc246013787c2a7b5257462fe7&CHRESPONSE=361088e9b188cf6b664eb592e6b247a7551ee630
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|112ms
+-> request: /v1/api/iserver/accounts
+-> GET /v1/api/iserver/accounts,200|112ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|416ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|684ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|436ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|825ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|461ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|512ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|2061ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|409ms
+-> request: /v1/api/tickle
+-> request: /sso/ping
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> POST /v1/portal/tickle
+uri /v1/portal/tickle failed
+io.netty.channel.ConnectTimeoutException: connection timed out: api.ibkr.com/64.190.196.17:443
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:267) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:120) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /sso/ping
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> POST /v1/portal/tickle
+-> request: /v1/api/tickle
+uri /v1/portal/tickle failed
+io.netty.channel.ConnectTimeoutException: connection timed out: api.ibkr.com/64.190.196.17:443
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:267) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:120) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> POST /v1/portal/tickle
+-> request: /v1/api/tickle
+uri /v1/portal/tickle failed
+io.netty.channel.ConnectTimeoutException: connection timed out: api.ibkr.com/64.190.196.17:443
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:267) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:120) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> request: /sso/ping
+uri /v1/portal/tickle failed
+io.netty.channel.ConnectTimeoutException: connection timed out: api.ibkr.com/64.190.196.17:443
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:267) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:120) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> POST /v1/portal/tickle
+-> request: /v1/api/tickle
+uri /v1/portal/tickle failed
+io.netty.channel.ConnectTimeoutException: connection timed out: api.ibkr.com/64.190.196.17:443
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:267) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:120) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> POST /v1/portal/tickle
+-> request: /v1/api/tickle
+uri /v1/portal/tickle failed
+io.netty.channel.ConnectTimeoutException: connection timed out: api.ibkr.com/64.190.196.17:443
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:267) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:120) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> POST /v1/portal/tickle
+-> request: /v1/api/tickle
+uri /v1/portal/tickle failed
+io.netty.channel.ConnectTimeoutException: connection timed out: api.ibkr.com/64.190.196.17:443
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:267) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:120) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463) ~[netty-transport-4.1.15.Final.jar:4.1.15.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.15.Final.jar:4.1.15.Final]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.8.0_271]
+-> request: /v1/api/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|462ms
+-> request: /sso/ping
+-> GET /sso/ping,200|486ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|113ms
+-> request: /v1/api/tickle
+-> POST /v1/portal/iserver/auth/status
+-> GET /v1/api/tickle,200|4443ms
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/sso/validate?gw=1
+-> request: /v1/api/tickle
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> GET /v1/api/tickle,200|4669ms
+-> GET /v1/api/sso/validate?gw=1,200|12393ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=2724e288f229bd21108e15c007e976a72a2809bf0d26bdabe2667d31705f37235c02ad4d73bf197bc8fa0e6c7bcc9e3c7bdd5d1b6924051b2f0974919865a65b&CHRESPONSE=ac2e8350869eeadd4ea700101199aee304b791b5
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=2724e288f229bd21108e15c007e976a72a2809bf0d26bdabe2667d31705f37235c02ad4d73bf197bc8fa0e6c7bcc9e3c7bdd5d1b6924051b2f0974919865a65b&CHRESPONSE=ac2e8350869eeadd4ea700101199aee304b791b5
+-> GET /v1/api/one/user,200|1929ms
+-> GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+<- 200 GET /v1/portal/sso/validate
+-> GET /v1/api/tickle,200|4223ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|449ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1504ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1123ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|472ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|437ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|451ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|442ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|484ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|404ms
+-> request: /sso/ping
+-> GET /sso/ping,200|429ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|407ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|689ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> request: /v1/api/sso/validate?gw=1
+-> GET /v1/api/sso/validate?gw=1,200|437ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> GET /v1/api/one/user,200|310ms
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=1c49b3bc8dfa6b76c785825d8ed3d211a9bc8c5ae27fc37ef55606e54ed0a40a123b2f4796182b5a07ded6f3b0245276df3cd2284234ea5789ad96991e4ea7d3&CHRESPONSE=69eda85e77646242cff481d1fafac3897b5a2198
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=1c49b3bc8dfa6b76c785825d8ed3d211a9bc8c5ae27fc37ef55606e54ed0a40a123b2f4796182b5a07ded6f3b0245276df3cd2284234ea5789ad96991e4ea7d3&CHRESPONSE=69eda85e77646242cff481d1fafac3897b5a2198
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|108ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,200|128ms
+-> request: /v1/api/iserver/auth/ssodh/response
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/response,200|117ms
+-> request: /v1/api/iserver/accounts
+-> GET /v1/api/iserver/accounts,200|102ms
+-> GET /v1/portal/sso/validate
+<- 200 GET /v1/portal/sso/validate
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|108ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|436ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1275ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|464ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|437ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|554ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|437ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|425ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|634ms
+-> request: /sso/ping
+-> GET /sso/ping,200|434ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|455ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|648ms
+-> POST /v1/portal/iserver/auth/status
+<- 200 POST /v1/portal/iserver/auth/status
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|109ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|441ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|441ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|585ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|415ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|439ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|445ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|443ms
+-> request: /sso/ping
+-> GET /sso/ping,200|437ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|437ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1141ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|400ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|799ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|412ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|467ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|402ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|491ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|411ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|457ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /sso/ping
+-> GET /sso/ping,200|100ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|167ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|123ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|110ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|99ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|119ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|109ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|101ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|108ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|430ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|446ms
+-> request: /sso/ping
+-> GET /sso/ping,200|517ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|623ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|414ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|411ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|450ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|417ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|928ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|108ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|102ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1320ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|408ms
+-> request: /sso/ping
+-> GET /sso/ping,200|432ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> POST /v1/portal/tickle
+-> GET /v1/api/tickle,200|922ms
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|111ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|4018ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|499ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|461ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|440ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|409ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|438ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|437ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /sso/ping
+-> GET /sso/ping,200|514ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|409ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|482ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|515ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|499ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|455ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|523ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|422ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|439ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|504ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|485ms
+-> request: /sso/ping
+-> GET /sso/ping,200|548ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|100ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|128ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|1104ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|570ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|160ms
+-> request: /v1/api/tickle
+-> POST /v1/portal/tickle
+-> GET /v1/api/tickle,200|596ms
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|488ms
+-> POST /v1/portal/tickle
+<- 200 POST /v1/portal/tickle
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|468ms
+-> request: /v1/api/tickle
+-> GET /v1/api/tickle,200|522ms

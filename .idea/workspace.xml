@@ -4,8 +4,12 @@
     <list default="true" id="9450614e-ab81-4a16-b9d2-77938772420c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/TheGoonior.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/TheGoonior.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ib/ib_endpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/ib_endpoints.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ib/ibclientportal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/ibclientportal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ib/iberror.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/iberror.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ib/test/test_ibcphttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/test/test_ibcphttp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.2021-02-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.message.2021-02-14.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sandbox2.py" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,11 +40,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ib" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;%load_ext autoreload&#10;%autoreload 2&#10;" module-name="pyIB" is-module-sdk="true">
+        <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;%load_ext autoreload&#10;%autoreload 2&#10;" />
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="pyIB" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TheGoonior\Documents\GitHub-Repos\pyIB\ib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Gootopia\Desktop\GITHUB\pyIB" />
     </key>
@@ -109,9 +125,24 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test_ibcphttp.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="pyIB" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ib/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/ib/test/test_ibcphttp.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.sandbox2" />
+        <item itemvalue="Python tests.Unittests in test_ibcphttp.py" />
         <item itemvalue="Python.sandbox" />
         <item itemvalue="Python.ibfunc" />
       </list>
