@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9450614e-ab81-4a16-b9d2-77938772420c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/TheGoonior.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/TheGoonior.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ib/ib_endpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/ib_endpoints.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ib/ibclientportal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/ibclientportal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ib/iberror.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/iberror.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ib/test/test_ibcphttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/test/test_ibcphttp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.2021-02-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.message.2021-02-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox2.py" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.2021-03-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.2021-03-28.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.message.2021-03-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.message.2021-03-28.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

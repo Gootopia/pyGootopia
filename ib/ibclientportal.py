@@ -81,15 +81,15 @@ class IBClientPortal(Thread):
     # Manual generic client Get request.
     @classmethod
     def clientrequest_get(cls, endpoint: IBEndpoints):
-        resp = cls.__get(endpoint)
-        result = cls.__error_check(resp)
+        resp, exception = cls.__get(endpoint)
+        result = cls.__error_check(resp, exception)
         return result
 
     # Manual generic client Post request.
     @classmethod
     def clientrequest_post(cls, endpoint: IBEndpoints):
-        resp = cls.__post(endpoint)
-        result = cls.__error_check(resp)
+        resp, exception = cls.__post(endpoint)
+        result = cls.__error_check(resp, exception)
         return result
 
     # URL string builder. Separate function so it's testable
@@ -134,19 +134,22 @@ class IBClientPortal(Thread):
             resp = requests.post(cpurl, headers=cls.headers, json=data, verify=False, timeout=cls.request_timeout)
 
         except requests.exceptions.ConnectionError as e:
-            print("==== GATEWAY NOT STARTED! ====")
+            print("==== CONNECTION ERROR! VERIFY GATEWAY IS STARTED====")
 
         except requests.exceptions.ReadTimeout as e:
             print("==== REQUEST TIMEOUT! ====")
 
-        return resp
+        except requests.exceptions as e:
+            print("==== UNHANDLED EXCEPTION! ====")
+
+        return resp, e
 
     # Generic error checking needed for all portal requests.
     @staticmethod
-    def __error_check(resp):
+    def __error_check(resp, exception):
         result = IBRequestResult()
 
-        # resp = None typically if a request timed out
+        # resp will be None if we had an exception
         if resp is not None:
             # If Ok = False, there was a problem submitting the request, typically an invalid URL
             if not resp.ok:
@@ -156,7 +159,8 @@ class IBClientPortal(Thread):
                 result.json = resp.json()
                 result.statusCode = resp.status_code
         else:
-            result.error = IBError.Request_Timeout
+            result.error = IBError.Connection_or_Timeout
+            print(exception)
 
         return result
 
