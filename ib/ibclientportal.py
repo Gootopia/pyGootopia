@@ -27,12 +27,13 @@ class IBClientPortal(Thread):
 
     # constructor
     def __init__(self):
+        # start a background thread that periodically pings the IB gateway to keep it alive
         Thread.__init__(self)
         self.daemon = True
         self.start()
         pass
 
-    # background watchdog task for ibclient
+    # background watchdog task for ibclient. call "kill_watchdog" or manually set timeout to 0 to terminate
     def run(self):
         while True:
             print(self.watchdog_timeout)
@@ -43,7 +44,8 @@ class IBClientPortal(Thread):
                 print("==== WATCHDOG KILLED ====")
                 break
 
-    # manually set the timeout to 0 to kill the watchdog process
+    # manually set the timeout to 0 to kill the watchdog process on its next pass.
+    # TODO: Kill process immediately
     def kill_watchdog(self):
         self.watchdog_timeout = 0
         print(self.watchdog_timeout)
@@ -104,6 +106,7 @@ class IBClientPortal(Thread):
         cpurl = cls.__build_endpoint_url(endpoint)
         print(f'Portal: {cpurl}')
         resp = None
+        resp_exception = None
         # Without verify=False, we get issues with untrusted SSL certificates
         # This should be ok for demo accounts, but need to follow up on this for live accounts
         # See https://stackoverflow.com/questions/10667960/python-requests-throwing-sslerror
@@ -112,13 +115,11 @@ class IBClientPortal(Thread):
         try:
             resp = requests.get(cpurl, headers=cls.headers, verify=False, timeout=cls.request_timeout)
 
-        except requests.exceptions.ConnectionError as e:
-            print("==== GATEWAY NOT STARTED! ====")
+        # grab any exceptions and return. They will be passed off to __error_check for handling
+        except Exception as resp_exception:
+            pass
 
-        except requests.exceptions.ReadTimeout as e:
-            print("==== REQUEST TIMEOUT! ====")
-
-        return resp
+        return resp, resp_exception
 
     # submit POST request to portal API
     @classmethod
@@ -126,6 +127,7 @@ class IBClientPortal(Thread):
         cpurl = cls.__build_endpoint_url(endpoint)
         print(f'Portal: {cpurl}')
         resp = None
+        resp_exception = None
         # Without verify=False, we get issues with untrusted SSL certificates
         # This should be ok for demo accounts, but need to follow up on this for live accounts
         # See https://stackoverflow.com/questions/10667960/python-requests-throwing-sslerror
@@ -133,16 +135,11 @@ class IBClientPortal(Thread):
         try:
             resp = requests.post(cpurl, headers=cls.headers, json=data, verify=False, timeout=cls.request_timeout)
 
-        except requests.exceptions.ConnectionError as e:
-            print("==== CONNECTION ERROR! VERIFY GATEWAY IS STARTED====")
+        # grab any exceptions and return. They will be passed off to __error_check for handling
+        except Exception as resp_exception:
+            pass
 
-        except requests.exceptions.ReadTimeout as e:
-            print("==== REQUEST TIMEOUT! ====")
-
-        except requests.exceptions as e:
-            print("==== UNHANDLED EXCEPTION! ====")
-
-        return resp, e
+        return resp, resp_exception
 
     # Generic error checking needed for all portal requests.
     @staticmethod

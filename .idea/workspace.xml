@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9450614e-ab81-4a16-b9d2-77938772420c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ib/ibclientportal.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/ibclientportal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ib/iberror.py" beforeDir="false" afterPath="$PROJECT_DIR$/ib/iberror.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.2021-03-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.2021-03-28.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.message.2021-03-28.log" beforeDir="false" afterPath="$PROJECT_DIR$/ibclient/clientportal.gw/logs/gw.message.2021-03-28.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +34,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="Project Files" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ib" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -169,6 +168,12 @@
       <updated>1575902011036</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$/pyIB" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
