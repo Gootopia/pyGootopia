@@ -7,7 +7,8 @@ from enum import Enum
 class IBError(Enum):
     No_Error = 1
     Invalid_URL = 2
+    Connection_or_Timeout = 3
 
 
-def testfunc(n):
-    return n
+if __name__ == '__main__':
+    print("=== iberror.py ===")

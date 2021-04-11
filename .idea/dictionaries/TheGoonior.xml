@@ -1,10 +1,16 @@
 <component name="ProjectDictionaryState">
   <dictionary name="TheGoonior">
     <words>
+      <w>clientportal</w>
       <w>clientrequest</w>
       <w>cpurl</w>
+      <w>ibclient</w>
+      <w>ibclientport</w>
       <w>ibcphttp</w>
+      <w>iberror</w>
       <w>iserver</w>
+      <w>reauthenticate</w>
+      <w>testfunc</w>
     </words>
   </dictionary>
 </component>

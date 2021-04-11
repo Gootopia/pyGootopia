@@ -13,7 +13,7 @@ class test_ibcphttp(unittest.TestCase):
         self.assertEqual(url, ibcphttp.apiUrlBase, 'Incorrect base url format')
 
     def test_statusEndpointString(self):
-        self.assertEqual(ibcphttp.Endpoints.Status.value, '/iserver/auth/status', 'Status endpoint incorrect')
+        self.assertEqual(ibcphttp.Endpoints.AuthenticationStatus.value, '/iserver/auth/status', 'Status endpoint incorrect')
 
     def test_tradesEndpointString(self):
         self.assertEqual(ibcphttp.Endpoints.Trades.value, '/iserver/account/trades', 'Trades endpoint incorrect')
