@@ -1,12 +1,12 @@
-# ib_resultrequest.py
+# resultrequest.py
 # Response message from IB client requests
 
-from ib.iberror import IBError
+from ib.error import Error
 
 
-class IBRequestResult:
+class RequestResult:
     # Decoded message for error
-    error: IBError = IBError.No_Error
+    error: Error = Error.No_Error
     # Client portal Web Error Code
     statusCode = 0
     # Client Portal JSON string

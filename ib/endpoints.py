@@ -1,10 +1,10 @@
-# ib_endpoints.py
+# endpoints.py
 # Interactive Brokers Client Portal Web API endpoints
 # See: https://www.interactivebrokers.com/api/doc.html
 from enum import Enum
 
 
-class IBEndpoints(Enum):
+class Endpoints(Enum):
     Blank = ''
     # SESSION ENDPOINTS
     Ping = '/tickle'

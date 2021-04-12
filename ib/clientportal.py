@@ -6,12 +6,12 @@
 import requests
 import time
 from threading import Thread
-from ib.iberror import IBError
-from ib.ib_endpoints import IBEndpoints
-from ib.ib_resultrequest import IBRequestResult
+from ib.error import Error
+from ib.endpoints import Endpoints
+from ib.resultrequest import RequestResult
 
 
-class IBClientPortal(Thread):
+class ClientPortal(Thread):
     # used for ib client portal JSON GET/POST requests
     headers = {'accept': 'application/json'}
 
@@ -53,56 +53,56 @@ class IBClientPortal(Thread):
     # Session->Ping = Ping the server to keep session open
     @classmethod
     def clientrequest_ping(cls):
-        return cls.clientrequest_post(IBEndpoints.Ping)
+        return cls.clientrequest_post(Endpoints.Ping)
 
     # Session->Authentication Status = Request to get client status
     @classmethod
     def clientrequest_authentication_status(cls):
-        return cls.clientrequest_post(IBEndpoints.AuthenticationStatus)
+        return cls.clientrequest_post(Endpoints.AuthenticationStatus)
 
     # Session->Reauthenticate = re-authenticate if valid session exists
     @classmethod
     def clientrequest_reauthenticate(cls):
-        return cls.clientrequest_post(IBEndpoints.Reauthenticate)
+        return cls.clientrequest_post(Endpoints.Reauthenticate)
 
     # Session->Validate = validate current session
     @classmethod
     def clientrequest_validate(cls):
-        return cls.clientrequest_get(IBEndpoints.Validate)
+        return cls.clientrequest_get(Endpoints.Validate)
 
     # Trades->Trades = Request to get trades from current and previous 6 days
     @classmethod
     def clientrequest_trades(cls):
-        return cls.clientrequest_get(IBEndpoints.Trades)
+        return cls.clientrequest_get(Endpoints.Trades)
 
     # Account->BrokerageAccounts = Get list of accessible trading accounts
     @classmethod
     def clientrequest_brokerage_accounts(cls):
-        return cls.clientrequest_get(IBEndpoints.BrokerageAccounts)
+        return cls.clientrequest_get(Endpoints.BrokerageAccounts)
 
     # Manual generic client Get request.
     @classmethod
-    def clientrequest_get(cls, endpoint: IBEndpoints):
+    def clientrequest_get(cls, endpoint: Endpoints):
         resp, exception = cls.__get(endpoint)
         result = cls.__error_check(resp, exception)
         return result
 
     # Manual generic client Post request.
     @classmethod
-    def clientrequest_post(cls, endpoint: IBEndpoints):
+    def clientrequest_post(cls, endpoint: Endpoints):
         resp, exception = cls.__post(endpoint)
         result = cls.__error_check(resp, exception)
         return result
 
     # URL string builder. Separate function so it's testable
     @staticmethod
-    def __build_endpoint_url(endpoint: IBEndpoints):
-        url = IBClientPortal.apiUrlBase + endpoint.value
+    def __build_endpoint_url(endpoint: Endpoints):
+        url = ClientPortal.apiUrlBase + endpoint.value
         return url
 
     # submit GET request to portal API
     @classmethod
-    def __get(cls, endpoint: IBEndpoints):
+    def __get(cls, endpoint: Endpoints):
         cpurl = cls.__build_endpoint_url(endpoint)
         print(f'Portal: {cpurl}')
         resp = None
@@ -123,7 +123,7 @@ class IBClientPortal(Thread):
 
     # submit POST request to portal API
     @classmethod
-    def __post(cls, endpoint: IBEndpoints, data: str = ''):
+    def __post(cls, endpoint: Endpoints, data: str = ''):
         cpurl = cls.__build_endpoint_url(endpoint)
         print(f'Portal: {cpurl}')
         resp = None
@@ -144,19 +144,19 @@ class IBClientPortal(Thread):
     # Generic error checking needed for all portal requests.
     @staticmethod
     def __error_check(resp, exception):
-        result = IBRequestResult()
+        result = RequestResult()
 
         # resp will be None if we had an exception
         if resp is not None:
             # If Ok = False, there was a problem submitting the request, typically an invalid URL
             if not resp.ok:
-                result.error = IBError.Invalid_URL
+                result.error = Error.Invalid_URL
             else:
                 # conversion to give the request specific json results
                 result.json = resp.json()
                 result.statusCode = resp.status_code
         else:
-            result.error = IBError.Connection_or_Timeout
+            result.error = Error.Connection_or_Timeout
             print(exception)
 
         return result
