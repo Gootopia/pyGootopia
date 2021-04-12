@@ -2,4 +2,6 @@
 ibclient/clientportal.gw/logs/
 
 .idea/workspace.xml
-/venv/*
+venv/
+
+__pycache__/
