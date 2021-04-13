@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        # currently running 3.8 only
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -37,4 +38,4 @@ jobs:
     - name: Test with pytest
       run: |
         echo "Testing..."
-        pytest
+        pytest -v
