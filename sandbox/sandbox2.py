@@ -1,6 +1,6 @@
 # sandbox2.py
 # Sandbox for testing various client functions
-from ib.ibclientportal import IBClientPortal
+from ib.clientportal import ClientPortal
 from threading import Thread
 import time
 
@@ -30,11 +30,11 @@ class MyClassB(Thread):
 
 
 def main():
-    ibc = IBClientPortal()
+    ibc = ClientPortal()
 
-    # resp = IBClientPortal.clientrequest_authentication_status()
-    # resp = IBClientPortal.clientrequest_brokerage_accounts()
-    # resp = IBClientPortal.clientrequest_reauthenticate()
+    # resp = ClientPortal.clientrequest_authentication_status()
+    # resp = ClientPortal.clientrequest_brokerage_accounts()
+    # resp = ClientPortal.clientrequest_reauthenticate()
     #print(resp.statusCode)
     #print(resp.json)
     print("===== STARTING THREADS =====")

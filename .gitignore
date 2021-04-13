@@ -2,6 +2,10 @@
 ibclient/clientportal.gw/logs/
 
 .idea/workspace.xml
+<<<<<<< HEAD
+/venv/
+=======
 venv/
 
 __pycache__/
+>>>>>>> develop
