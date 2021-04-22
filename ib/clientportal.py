@@ -33,7 +33,8 @@ class ClientPortal(Thread):
         self.start()
         pass
 
-    # background watchdog task for ibclient. call "kill_watchdog" or manually set timeout to 0 to terminate
+    # Thread execution task. Background watchdog task for ibclient.
+    # Call "kill_watchdog" or manually set timeout to 0 to terminate
     def run(self):
         while True:
             print(self.watchdog_timeout)
@@ -53,43 +54,43 @@ class ClientPortal(Thread):
     # Session->Ping = Ping the server to keep session open
     @classmethod
     def clientrequest_ping(cls):
-        return cls.clientrequest_post(Endpoints.Ping)
+        return cls.__clientrequest_post(Endpoints.Ping)
 
     # Session->Authentication Status = Request to get client status
     @classmethod
     def clientrequest_authentication_status(cls):
-        return cls.clientrequest_post(Endpoints.AuthenticationStatus)
+        return cls.__clientrequest_post(Endpoints.AuthenticationStatus)
 
     # Session->Reauthenticate = re-authenticate if valid session exists
     @classmethod
     def clientrequest_reauthenticate(cls):
-        return cls.clientrequest_post(Endpoints.Reauthenticate)
+        return cls.__clientrequest_post(Endpoints.Reauthenticate)
 
     # Session->Validate = validate current session
     @classmethod
     def clientrequest_validate(cls):
-        return cls.clientrequest_get(Endpoints.Validate)
+        return cls.__clientrequest_get(Endpoints.Validate)
 
     # Trades->Trades = Request to get trades from current and previous 6 days
     @classmethod
     def clientrequest_trades(cls):
-        return cls.clientrequest_get(Endpoints.Trades)
+        return cls.__clientrequest_get(Endpoints.Trades)
 
     # Account->BrokerageAccounts = Get list of accessible trading accounts
     @classmethod
     def clientrequest_brokerage_accounts(cls):
-        return cls.clientrequest_get(Endpoints.BrokerageAccounts)
+        return cls.__clientrequest_get(Endpoints.BrokerageAccounts)
 
     # Manual generic client Get request.
     @classmethod
-    def clientrequest_get(cls, endpoint: Endpoints):
+    def __clientrequest_get(cls, endpoint: Endpoints):
         resp, exception = cls.__get(endpoint)
         result = cls.__error_check(resp, exception)
         return result
 
     # Manual generic client Post request.
     @classmethod
-    def clientrequest_post(cls, endpoint: Endpoints):
+    def __clientrequest_post(cls, endpoint: Endpoints):
         resp, exception = cls.__post(endpoint)
         result = cls.__error_check(resp, exception)
         return result
