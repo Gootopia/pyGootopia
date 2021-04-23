@@ -16,3 +16,6 @@ class Endpoints(Enum):
 
     # ACCOUNT ENDPOINTS
     BrokerageAccounts = '/iserver/accounts'
+
+    # WEBSOCKET
+    

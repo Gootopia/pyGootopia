@@ -1,9 +1,10 @@
 # error.py
 # Various error codes for ib client
 
-from enum import Enum
+from enum import Enum, unique
 
 
+@unique
 class Error(Enum):
     No_Error = 1
     Invalid_URL = 2
