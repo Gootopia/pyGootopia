@@ -4,22 +4,19 @@
 # Swagger can be used to test client requests: https://interactivebrokers.github.io/cpwebapi/swagger-ui.html
 # Consult curl.trillworks.com for conversion of curl commands to Python requests
 import requests
-import time
-from threading import Thread
+from overrides import overrides
 from ib.error import Error
 from ib.endpoints import Endpoints
 from ib.resultrequest import RequestResult
+from ib.watchdog import Watchdog
 
 
-class ClientPortal(Thread):
+class ClientPortal(Watchdog):
     # used for ib client portal JSON GET/POST requests
     headers = {'accept': 'application/json'}
 
     # request timeout (seconds)
     request_timeout = 10
-
-    # watchdog ping timer (second)
-    watchdog_timeout = 30
 
     # base URL for submitting all client portal API. All commands append to this string
     # Note that the last backslash is omitted so that we match the IB docs
@@ -27,29 +24,13 @@ class ClientPortal(Thread):
 
     # constructor
     def __init__(self):
-        # start a background thread that periodically pings the IB gateway to keep it alive
-        Thread.__init__(self)
-        self.daemon = True
-        self.start()
+        super().__init__()
+        self.watchdog_timeout_sec = 10
         pass
 
-    # Thread execution task. Background watchdog task for ibclient.
-    # Call "kill_watchdog" or manually set timeout to 0 to terminate
-    def run(self):
-        while True:
-            print(self.watchdog_timeout)
-            if self.watchdog_timeout >= 1:
-                resp = self.clientrequest_ping()
-                time.sleep(self.watchdog_timeout)
-            else:
-                print("==== WATCHDOG KILLED ====")
-                break
-
-    # manually set the timeout to 0 to kill the watchdog process on its next pass.
-    # TODO: Kill process immediately
-    def kill_watchdog(self):
-        self.watchdog_timeout = 0
-        print(self.watchdog_timeout)
+    @overrides
+    def watchdog_task(self):
+        print("=== IB HEARTBEAT ===")
 
     # Session->Ping = Ping the server to keep session open
     @classmethod
