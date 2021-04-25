@@ -7,41 +7,45 @@
 from overrides import overrides
 from ib.endpoints import Endpoints
 from ib.httpendpoints import HttpEndpoints
+from loguru import logger
 
 
 class ClientPortal(HttpEndpoints):
-    # constructor
+    # TODO: Document ClientPortal class
+
     def __init__(self):
         super().__init__()
-        # Set the base used by all endpoints
+        # Base used by all endpoints
         self.apiUrlBase = 'https://localhost:5000/v1/portal'
+        logger.log('DEBUG', f'Clientportal Started with gateway: {self.apiUrlBase}')
 
     @overrides
     def watchdog_task(self):
-        print("=== IB HEARTBEAT ===")
+        result = self.clientrequest_ping()
 
-    # Session->Ping = Ping the server to keep session open
+    # TODO: Add logging wrappers
     def clientrequest_ping(self):
+        """ Send session keep-alive."""
         return self.clientrequest_post(Endpoints.Ping.value)
 
-    # Session->Authentication Status = Request to get client status
     def clientrequest_authentication_status(self):
+        """ Get current session status."""
         return self.clientrequest_post(Endpoints.AuthenticationStatus.value)
 
-    # Session->Reauthenticate = re-authenticate if valid session exists
     def clientrequest_reauthenticate(self):
+        """ Re-authenticate a session."""
         return self.clientrequest_post(Endpoints.Reauthenticate.value)
 
-    # Session->Validate = validate current session
     def clientrequest_validate(self):
+        """ Validate the current session."""
         return self.clientrequest_get(Endpoints.Validate.value)
 
-    # Trades->Trades = Request to get trades from current and previous 6 days
     def clientrequest_trades(self):
+        """ Return trades from last current and previous 6 days."""
         return self.clientrequest_get(Endpoints.Trades.value)
 
-    # Account->BrokerageAccounts = Get list of accessible trading accounts
     def clientrequest_brokerage_accounts(self):
+        """ Get list of accessible trading accounts."""
         return self.clientrequest_get(Endpoints.BrokerageAccounts.value)
 
 
