@@ -6,16 +6,18 @@ from threading import Thread
 
 
 class Watchdog(Thread):
-    # watchdog ping timer (second)
-    watchdog_timeout_sec = 30
+    watchdog_timeout_sec: int
 
     # constructor
-    def __init__(self):
+    def __init__(self, timeout_sec=10, autostart=False):
         # start a background thread that periodically performs a watchdog_task
         Thread.__init__(self)
         self.daemon = True
-        self.start()
-        pass
+        self.watchdog_timeout_sec = timeout_sec
+
+        # False => user wants to manually kick off the watchdog sometime in the future
+        if autostart:
+            self.start()
 
     # Thread execution watchdog_task.
     # Call "kill_watchdog" or manually set timeout to 0 to terminate
@@ -32,7 +34,6 @@ class Watchdog(Thread):
     # TODO: Kill process immediately
     def kill_watchdog(self):
         self.watchdog_timeout_sec = 0
-        print(self.watchdog_timeout_sec)
 
     # watchdog watchdog_task. Sub-class and override to do something useful
     def watchdog_task(self):
