@@ -14,7 +14,7 @@ class ClientPortal(HttpEndpoints):
     def __init__(self):
         super().__init__()
         # Set the base used by all endpoints
-        self.set_urlbase('https://localhost:5000/v1/portal')
+        self.apiUrlBase = 'https://localhost:5000/v1/portal'
 
     @overrides
     def watchdog_task(self):
@@ -22,7 +22,7 @@ class ClientPortal(HttpEndpoints):
 
     # Session->Ping = Ping the server to keep session open
     def clientrequest_ping(self):
-        return self.clientrequest_post(self, Endpoints.Ping.value)
+        return self.clientrequest_post(Endpoints.Ping.value)
 
     # Session->Authentication Status = Request to get client status
     def clientrequest_authentication_status(self):
