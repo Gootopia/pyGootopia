@@ -1,4 +1,4 @@
-# endpoints.py
+# ib_endpoints.py
 # Interactive Brokers Client Portal Web API endpoints
 # See: https://www.interactivebrokers.com/api/doc.html
 from enum import Enum
@@ -16,6 +16,3 @@ class Endpoints(Enum):
 
     # ACCOUNT ENDPOINTS
     BrokerageAccounts = '/iserver/accounts'
-
-    # WEBSOCKET
-    

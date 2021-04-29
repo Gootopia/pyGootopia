@@ -1,8 +1,4 @@
-# ibclientport.py
-# IB Client Portal for REST requests. Use ClientPortalWS to add websocket functionality
-# Refer to https://www.interactivebrokers.com/api/doc.html for API documentation
-# Swagger can be used to test client requests: https://interactivebrokers.github.io/cpwebapi/swagger-ui.html
-# Consult curl.trillworks.com for conversion of curl commands to Python requests
+# clientportal_http.py
 
 from overrides import overrides
 from ib.endpoints import Endpoints
@@ -10,14 +6,19 @@ from ib.httpendpoints import HttpEndpoints
 from loguru import logger
 
 
-class ClientPortal(HttpEndpoints):
-    # TODO: Document ClientPortal class
-
+class ClientPortalHttp(HttpEndpoints):
+    # TODO: Document ClientPortalHttp class
+    """
+    Interactive Brokers ClientPortal Interface (HTTP).
+    Refer to https://www.interactivebrokers.com/api/doc.html for API documentation
+    Swagger can be used to test client requests: https://interactivebrokers.github.io/cpwebapi/swagger-ui.html
+    Consult curl.trillworks.com for conversion of curl commands to Python requests
+    """
     def __init__(self):
         super().__init__()
         # Base used by all endpoints
-        self.apiUrlBase = 'https://localhost:5000/v1/portal'
-        logger.log('DEBUG', f'Clientportal Started with gateway: {self.apiUrlBase}')
+        self.url_http = 'https://localhost:5000/v1/portal'
+        logger.log('DEBUG', f'Clientportal (HTTP) Started with gateway: {self.url_http}')
 
     @overrides
     def watchdog_task(self):
@@ -50,4 +51,4 @@ class ClientPortal(HttpEndpoints):
 
 
 if __name__ == '__main__':
-    print("=== IB Client Portal API ===")
+    print("=== IB Client Portal (HTTP) ===")

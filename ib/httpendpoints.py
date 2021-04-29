@@ -1,6 +1,5 @@
 # httpendpoints.py
-# base for submitting get and put requests to an http client with endpoints
-# Consult curl.trillworks.com for conversion of curl commands to Python requests
+
 import requests
 import urllib3
 from ib.error import Error
@@ -24,7 +23,7 @@ class HttpEndpoints(Watchdog):
         super().__init__(timeout_sec=10, autostart=True)
 
         # gateway base URL for submitting all client portal API. All commands append to this string
-        self.apiUrlBase = ''
+        self.url_http = ''
         self.request_timeout_sec = 10
 
         # TODO: This gets rid of annoying security warnings for requests library. Need to figure out certificate stuff.
@@ -40,11 +39,12 @@ class HttpEndpoints(Watchdog):
     def clientrequest_post(self, endpoint=''):
         """ Gateway Post message request using desired endpoint."""
         cpurl, resp, exception = self.__post(endpoint)
+
         result = self.__error_check(cpurl, resp, exception)
         return result
 
     def __build_endpoint_url(self, endpoint: str = ''):
-        url = self.apiUrlBase + endpoint
+        url = self.url_http + endpoint
         return url
 
     def __get(self, endpoint: str = ''):
