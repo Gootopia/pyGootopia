@@ -15,10 +15,11 @@ class Watchdog(Thread):
         - timeout_sec (10)= Interval for watchdog timer in seconds.
         - autostart (False) = Start background task immediately. Use start() for manual initiation.
     """
-    def __init__(self, timeout_sec=10, autostart=False):
+    def __init__(self, name='Unknown', timeout_sec=10, autostart=False):
         Thread.__init__(self)
         self.daemon = True
         self.watchdog_timeout_sec = timeout_sec
+        self.name = name
 
         # False => user will manually call start() sometime in the future
         if autostart:
@@ -39,7 +40,7 @@ class Watchdog(Thread):
 
     def watchdog_task(self):
         """ Called once each watchdog period """
-        logger.log('INFO', f'WATCHDOG TIMEOUT={self.watchdog_timeout_sec}')
+        logger.log('INFO', f'WATCHDOG({self.name}) TIMEOUT={self.watchdog_timeout_sec}')
 
 
 if __name__ == '__main__':

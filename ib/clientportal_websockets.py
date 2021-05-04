@@ -1,30 +1,30 @@
 # clientportal_websockets.py
 
 from overrides import overrides
-from ib.clientportal_http import ClientPortalHttp
+from ib.watchdog import Watchdog
 import asyncio
 import websockets
 import pathlib
 import ssl
-
 from loguru import logger
+from concurrent.futures import ThreadPoolExecutor
 
 
-class ClientPortalWebsockets(ClientPortalHttp):
+class ClientPortalWebsockets(Watchdog):
     # TODO: Document ClientPortalWebsockets class
     """
     Interactive Brokers ClientPortal Interface (Websocket).
     Refer to https://interactivebrokers.github.io/cpwebapi/RealtimeSubscription.html for API documentation
+    NOTE: Websocket usage also requires the UI to send the /tickle endpoint. See Websocket Ping Session docs.
     """
     def __init__(self):
-        super().__init__()
+        super().__init__(autostart=True, timeout_sec=5, name='WebSocket')
         self.url_websockets = 'wss://localhost:5000/v1/api/ws'
         # Base used by all endpoints
         logger.log('DEBUG', f'Clientportal (Websockets) Started with endpoint: {self.url_websockets}')
 
     @overrides
     def watchdog_task(self):
-        # call the http watchdog which is also required to keep alive the websockets sessions
         super().watchdog_task()
 
     async def connection(self):
@@ -44,11 +44,14 @@ class ClientPortalWebsockets(ClientPortalHttp):
         async with websockets.connect(self.url_websockets, ssl=ssl_context) as ws:
             print('Waiting...')
             await ws.send('smd+265598+{"fields":["31","83"]}')
-            response = await ws.recv()
-            print(f'{response}')
+            while True:
+                response = await ws.recv()
+                print(f'{response}')
 
     def loop(self):
-        asyncio.get_event_loop().run_until_complete(self.connection())
+        with ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(asyncio.get_event_loop().run_until_complete(self.connection()))
+            print("=== EXITED LOOP ====")
 
 
 if __name__ == '__main__':
