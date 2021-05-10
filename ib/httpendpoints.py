@@ -26,7 +26,7 @@ class HttpEndpoints(Watchdog):
         self.url_http = ''
         self.request_timeout_sec = 10
 
-        # TODO: This gets rid of annoying security warnings for requests library. Need to figure out certificate stuff.
+        # TODO: This gets rid of annoying security warnings for requests library. Need to figure out ssl_context stuff.
         if disable_request_warnings:
             urllib3.disable_warnings()
 

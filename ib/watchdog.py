@@ -19,7 +19,7 @@ class Watchdog(Thread):
         Thread.__init__(self)
         self.daemon = True
         self.watchdog_timeout_sec = timeout_sec
-        self.name = name
+        self.watchdog_name = name
 
         # False => user will manually call start() sometime in the future
         if autostart:
@@ -31,7 +31,7 @@ class Watchdog(Thread):
                 self.watchdog_task()
                 time.sleep(self.watchdog_timeout_sec)
             else:
-                logger.log('INFO', 'Watchdog disabled')
+                logger.log('DEBUG', 'Watchdog disabled')
                 break
 
     def kill_watchdog(self):
@@ -40,7 +40,7 @@ class Watchdog(Thread):
 
     def watchdog_task(self):
         """ Called once each watchdog period """
-        logger.log('INFO', f'WATCHDOG({self.name}) TIMEOUT={self.watchdog_timeout_sec}')
+        logger.log('DEBUG', f'WATCHDOG({self.watchdog_name}) TIMEOUT={self.watchdog_timeout_sec}')
 
 
 if __name__ == '__main__':

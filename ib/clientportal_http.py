@@ -3,6 +3,7 @@
 from overrides import overrides
 from ib.endpoints import Endpoints
 from ib.httpendpoints import HttpEndpoints
+from ib.watchdog import Watchdog
 from loguru import logger
 
 
@@ -16,12 +17,14 @@ class ClientPortalHttp(HttpEndpoints):
     """
     def __init__(self):
         super().__init__()
+        self.name = 'HTTP'
         # Base used by all endpoints
         self.url_http = 'https://localhost:5000/v1/portal'
         logger.log('DEBUG', f'Clientportal (HTTP) Started with gateway: {self.url_http}')
 
     @overrides
     def watchdog_task(self):
+        super().watchdog_task()
         result = self.clientrequest_ping()
 
     # TODO: Add logging wrappers
