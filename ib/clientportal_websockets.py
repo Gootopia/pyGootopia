@@ -4,13 +4,20 @@ from overrides import overrides
 from ib.watchdog import Watchdog
 import asyncio
 import websockets
-from lib.certificate import Certificate
+from lib.certificate import Certificate, CertificateError
 from loguru import logger
 from concurrent.futures import ThreadPoolExecutor
+from enum import Enum
 
 
-class ClientPortalWebsockets(Watchdog):
+class ClientPortalWebsocketsError(Enum):
+    Ok = 0
+    Unknown = 1
+    Invalid_Certificate = 2
+
+
     # TODO: Document ClientPortalWebsockets class
+class ClientPortalWebsockets(Watchdog):
     """
     Interactive Brokers ClientPortal Interface (Websocket).
     Refer to https://interactivebrokers.github.io/cpwebapi/RealtimeSubscription.html for API documentation
@@ -27,22 +34,37 @@ class ClientPortalWebsockets(Watchdog):
         super().watchdog_task()
         # TODO: Add periodic call to websocket 'tic'
 
-    async def connection(self):
-        """ Create the websocket connection """
-        ssl_context = Certificate.get_certificate()
+    async def establish_connection(self):
+        """ Create the websocket establish_connection """
+        result = Certificate.get_certificate()
 
-        print('Connecting...')
-        async with websockets.connect(self.url_websockets, ssl=ssl_context) as ws:
-            print('Waiting...')
-            await ws.send('smd+265598+{"fields":["31","83"]}')
-            while True:
-                response = await ws.recv()
-                print(f'{response}')
+        if result.error != CertificateError.Ok:
+            logger.log('DEBUG', f'Problems obtaining certificate: {result.error}')
+            return ClientPortalWebsocketsError.Invalid_Certificate
+
+        logger.log('DEBUG', f'Attempting connection to "{self.url_websockets}"')
+
+        try:
+            async with websockets.connect(self.url_websockets, ssl=result.ssl_context) as ws:
+                logger.log('DEBUG', f'Connected to "{self.url_websockets}')
+                await ws.send('smd+265598+{"fields":["31","83"]}')
+                while True:
+                    response = await ws.recv()
+                    print(f'{response}')
+        except websockets.InvalidURI:
+            pass
+        except websockets.InvalidHandshake:
+            pass
+        except Exception as e:
+            pass
+        finally:
+            logger.log('DEBUG', f'Connection "{self.url_websockets}" broken')
 
     def loop(self):
         with ThreadPoolExecutor(max_workers=1) as executor:
-            future = executor.submit(asyncio.get_event_loop().run_until_complete(self.connection()))
-            print("=== EXITED LOOP ====")
+            logger.log('DEBUG', f'Starting websockets thread')
+            future = executor.submit(asyncio.get_event_loop().run_until_complete(self.establish_connection()))
+            logger.log('DEBUG', f'Completed websockets thread')
 
 
 if __name__ == '__main__':

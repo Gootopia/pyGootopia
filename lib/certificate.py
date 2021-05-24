@@ -17,6 +17,7 @@ class CertificateReturn:
     error: CertificateError
 
 
+# TODO: Add functionality to create SSL certificates
 class Certificate:
     """ Instructions on how to make a ssl_context
     See: https://talkdotnet.wordpress.com/2019/08/07/generating-a-pem-private-and-public-certificate-with-openssl-on-windows/

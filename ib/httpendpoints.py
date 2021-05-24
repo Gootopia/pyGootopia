@@ -60,7 +60,8 @@ class HttpEndpoints(Watchdog):
             resp = requests.get(cpurl, headers=HttpEndpoints.headers, verify=False, timeout=self.request_timeout_sec)
 
         # grab any exceptions and return. They will be passed off to __error_check for handling
-        except Exception as resp_exception:
+        except Exception as e:
+            resp_exception = e
             pass
 
         return cpurl, resp, resp_exception
@@ -79,7 +80,8 @@ class HttpEndpoints(Watchdog):
                                  json=data, verify=False, timeout=self.request_timeout_sec)
 
         # grab any exceptions and return. They will be passed off to __error_check for handling
-        except Exception as resp_exception:
+        except Exception as e:
+            resp_exception = e
             pass
 
         return cpurl, resp, resp_exception
