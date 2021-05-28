@@ -22,7 +22,7 @@ class Watchdog(Thread):
         self.watchdog_name = name
 
         # False => user will manually call start() sometime in the future
-        if autostart:
+        if autostart is True:
             self.start()
 
     def run(self):

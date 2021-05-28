@@ -18,9 +18,9 @@ class HttpEndpoints(Watchdog):
     headers = {'accept': 'application/json'}
 
     # constructor
-    def __init__(self, disable_request_warnings=True):
+    def __init__(self, name='Unknown', timeout_sec=5, autostart=True, disable_request_warnings=True):
         # kick off the watchdog
-        super().__init__(timeout_sec=10, autostart=True)
+        super().__init__(name=name, timeout_sec=timeout_sec, autostart=autostart)
 
         # gateway base URL for submitting all client portal API. All commands append to this string
         self.url_http = ''

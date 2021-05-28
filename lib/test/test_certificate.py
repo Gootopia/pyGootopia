@@ -2,9 +2,6 @@
 from lib.certificate import Certificate
 from lib.certificate import CertificateError
 from pathlib import Path
-from unittest.mock import patch
-import lib.certificate
-import pytest
 
 
 def test_get_certificate_bad_path():
