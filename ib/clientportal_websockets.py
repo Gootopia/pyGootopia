@@ -1,15 +1,13 @@
 # clientportal_websockets.py
 
 from overrides import overrides
-from ib.watchdog import Watchdog
+from lib.watchdog import Watchdog
 import asyncio
 import websockets
 from lib.certificate import Certificate, CertificateError
 from loguru import logger
 from concurrent.futures import ThreadPoolExecutor
 from enum import Enum
-import threading
-import time
 
 
 class ClientPortalWebsocketsError(Enum):
@@ -70,20 +68,28 @@ class ClientPortalWebsockets(Watchdog):
             self.connection = ws
             pass
 
-        # connect to socket
         return ClientPortalWebsocketsError.Ok
 
     async def process_message(self):
+        first = False
         if self.connection is not None:
-            msg = await self.connection.recv()
-            print(f'{msg}')
+            while True:
+                msg = await self.connection.recv()
+                print(f'{msg}')
+                if first is False:
+                    await self.connection.send(
+                        'smh+265598+{"exchange":"ISLAND","period":"2h","bar":"5min","outsideRth":false,"source":"t","format":"%h/%l"}')
+                    first = True
 
     def loop(self):
-        with ThreadPoolExecutor(max_workers=2) as executor:
-            logger.log('DEBUG', f'Starting websockets thread')
-            future_connection = executor.submit(asyncio.get_event_loop().run_until_complete(self.open_connection()))
-            future_message_handler = executor.submit(asyncio.get_event_loop().run_until_complete(self.process_message()))
-            logger.log('DEBUG', f'Completed websockets thread')
+        try:
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                future_connection = executor.submit(asyncio.get_event_loop().run_until_complete(self.open_connection()))
+                future_message_handler = executor.submit(asyncio.get_event_loop().run_until_complete(self.process_message()))
+        except Exception as e:
+            logger.log('DEBUG', f'Exception:{e}')
+        finally:
+            pass
 
 
 if __name__ == '__main__':

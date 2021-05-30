@@ -1,6 +1,5 @@
 import pytest
 from unittest.mock import patch
-from asynctest import CoroutineMock
 from lib.certificate import CertificateError
 from lib.certificate import CertificateReturn
 from ib.clientportal_websockets import ClientPortalWebsockets

@@ -4,7 +4,7 @@ import requests
 import urllib3
 from ib.error import Error
 from ib.resultrequest import RequestResult
-from ib.watchdog import Watchdog
+from lib.watchdog import Watchdog
 from loguru import logger
 
 
@@ -17,7 +17,6 @@ class HttpEndpoints(Watchdog):
     # used for JSON GET/POST requests
     headers = {'accept': 'application/json'}
 
-    # constructor
     def __init__(self, name='Unknown', timeout_sec=5, autostart=True, disable_request_warnings=True):
         # kick off the watchdog
         super().__init__(name=name, timeout_sec=timeout_sec, autostart=autostart)
@@ -26,7 +25,6 @@ class HttpEndpoints(Watchdog):
         self.url_http = ''
         self.request_timeout_sec = 10
 
-        # TODO: This gets rid of annoying security warnings for requests library. Need to figure out ssl_context stuff.
         if disable_request_warnings:
             urllib3.disable_warnings()
 
@@ -64,6 +62,7 @@ class HttpEndpoints(Watchdog):
             resp_exception = e
             pass
 
+        # TODO: Refactor to use dataclass
         return cpurl, resp, resp_exception
 
     def __post(self, endpoint: str = '', data: str = ''):
@@ -84,6 +83,7 @@ class HttpEndpoints(Watchdog):
             resp_exception = e
             pass
 
+        # TODO: Refactor to use dataclass
         return cpurl, resp, resp_exception
 
     @staticmethod
@@ -101,7 +101,7 @@ class HttpEndpoints(Watchdog):
                 result.statusCode = resp.status_code
         else:
             result.error = Error.Connection_or_Timeout
-            print(exception)
+            logger.log('DEBUG', f'{exception}')
 
         logger.log('DEBUG', f'{cpurl}: Error={result.error}, Status={result.statusCode}')
         return result

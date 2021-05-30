@@ -2,8 +2,7 @@
 
 from overrides import overrides
 from ib.endpoints import Endpoints
-from ib.httpendpoints import HttpEndpoints
-from ib.watchdog import Watchdog
+from lib.httpendpoints import HttpEndpoints
 from loguru import logger
 
 
@@ -25,7 +24,7 @@ class ClientPortalHttp(HttpEndpoints):
     @overrides
     def watchdog_task(self):
         super().watchdog_task()
-        result = self.clientrequest_ping()
+        return self.clientrequest_ping()
 
     # TODO: Add logging wrappers
     def clientrequest_ping(self):
