@@ -8,6 +8,7 @@ from lib.certificate import Certificate, CertificateError
 from loguru import logger
 from concurrent.futures import ThreadPoolExecutor
 from enum import Enum
+import time
 
 
 class ClientPortalWebsocketsError(Enum):
@@ -19,7 +20,7 @@ class ClientPortalWebsocketsError(Enum):
 
 
 # TODO: Document ClientPortalWebsockets class
-class ClientPortalWebsockets(Watchdog):
+class ClientPortalWebsockets():
     """
     Interactive Brokers ClientPortal Interface (Websocket).
     Refer to https://interactivebrokers.github.io/cpwebapi/RealtimeSubscription.html for API documentation
@@ -29,16 +30,10 @@ class ClientPortalWebsockets(Watchdog):
     connection: websockets.WebSocketClientProtocol
 
     def __init__(self):
-        # Websocket watchdog timer gets a 5-second timeout
-        super().__init__(autostart=True, timeout_sec=5, name='IB_WebSocket')
         # Base used by all IB websocket endpoints
         self.url = 'wss://localhost:5000/v1/api/ws'
         self.connection = None
         logger.log('DEBUG', f'Clientportal (Websockets) Started with endpoint: {self.url}')
-
-    def watchdog_task(self):
-        super().watchdog_task()
-        # TODO: Add periodic call to websocket 'tic'
 
     async def open_connection(self, url='', url_validator=None):
         """ Open a websocket connection """
@@ -68,28 +63,44 @@ class ClientPortalWebsockets(Watchdog):
 
         return ClientPortalWebsocketsError.Ok
 
-    async def process_message(self):
-        first = False
-        if self.connection is not None:
-            while True:
-                msg = await self.connection.recv()
-                print(f'{msg}')
-                if first is False:
-                    await self.connection.send(
-                        'smh+265598+{"exchange":"ISLAND","period":"2h","bar":"5min","outsideRth":false,"source":"t","format":"%h/%l"}')
-                    first = True
-
     def loop(self):
+        """ Start websocket message handler and heartbeat """
         try:
-            with ThreadPoolExecutor(max_workers=2) as executor:
-                future_connection = executor.submit(
-                    asyncio.get_event_loop().run_until_complete(self.open_connection()))
-                future_message_handler = executor.submit(
-                    asyncio.get_event_loop().run_until_complete(self.process_message()))
+            with ThreadPoolExecutor() as executor:
+                executor.submit(asyncio.get_event_loop().run_until_complete(self.__async_loop()))
+
         except Exception as e:
             logger.log('DEBUG', f'Exception:{e}')
         finally:
             pass
+
+    async def __websocket_msg_handler(self):
+        if self.connection is not None:
+            logger.log('DEBUG', f'Started websocket message handler')
+            try:
+                while True:
+                    msg = await self.connection.recv()
+                    print(f'{msg}')
+            except Exception as e:
+                logger.log('DEBUG', f'Exception: {e}')
+
+        else:
+            logger.log('DEBUG', f'Websocket handler has no valid connection')
+
+    async def __websocket_heartbeat(self):
+        if self.connection is not None:
+            logger.log('DEBUG', f'Started websocket heartbeat')
+            try:
+                while True:
+                    await self.connection.send('tic')
+                    await asyncio.sleep(10)
+            except Exception as e:
+                logger.log('DEBUG', f'Exception: {e}')
+
+    async def __async_loop(self):
+        task_connection = asyncio.create_task(self.open_connection())
+        await task_connection
+        await asyncio.gather(self.__websocket_msg_handler(), self.__websocket_heartbeat())
 
 
 if __name__ == '__main__':

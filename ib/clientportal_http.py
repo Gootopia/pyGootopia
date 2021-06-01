@@ -15,7 +15,7 @@ class ClientPortalHttp(HttpEndpoints):
     Consult curl.trillworks.com for conversion of curl commands to Python requests
     """
     def __init__(self):
-        super().__init__(autostart=True, timeout_sec=5, name='IB_HTTP')
+        super().__init__(autostart=True, timeout_sec=60, name='IB_HTTP')
         self.name = 'HTTP'
         # Base used by all endpoints
         self.url_http = 'https://localhost:5000/v1/portal'

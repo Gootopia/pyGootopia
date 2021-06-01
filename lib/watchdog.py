@@ -1,6 +1,4 @@
 # watchdog.py
-
-
 import time
 from threading import Thread
 from loguru import logger
