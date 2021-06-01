@@ -33,11 +33,9 @@ class ClientPortalWebsockets(Watchdog):
         super().__init__(autostart=True, timeout_sec=5, name='IB_WebSocket')
         # Base used by all IB websocket endpoints
         self.url = 'wss://localhost:5000/v1/api/ws'
-        # Need to create with
         self.connection = None
         logger.log('DEBUG', f'Clientportal (Websockets) Started with endpoint: {self.url}')
 
-    @overrides
     def watchdog_task(self):
         super().watchdog_task()
         # TODO: Add periodic call to websocket 'tic'
@@ -60,9 +58,9 @@ class ClientPortalWebsockets(Watchdog):
             pass
             ws = await websockets.connect(self.url, ssl=result.ssl_context)
         except websockets.WebSocketException as e:
-            pass
+            logger.log('DEBUG', f'Websocket exception: {e}')
         except Exception as e:
-            pass
+            logger.log('DEBUG', f'General exception: {e}')
         finally:
             logger.log('DEBUG', f'Connection established to "{self.url}"')
             self.connection = ws
@@ -84,8 +82,10 @@ class ClientPortalWebsockets(Watchdog):
     def loop(self):
         try:
             with ThreadPoolExecutor(max_workers=2) as executor:
-                future_connection = executor.submit(asyncio.get_event_loop().run_until_complete(self.open_connection()))
-                future_message_handler = executor.submit(asyncio.get_event_loop().run_until_complete(self.process_message()))
+                future_connection = executor.submit(
+                    asyncio.get_event_loop().run_until_complete(self.open_connection()))
+                future_message_handler = executor.submit(
+                    asyncio.get_event_loop().run_until_complete(self.process_message()))
         except Exception as e:
             logger.log('DEBUG', f'Exception:{e}')
         finally:
