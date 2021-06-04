@@ -38,7 +38,7 @@ class Watchdog(Thread):
 
     def watchdog_task(self):
         """ Called once each watchdog period """
-        logger.log('DEBUG', f'WATCHDOG({self.watchdog_name}) TIMEOUT={self.watchdog_timeout_sec}')
+        logger.log('DEBUG', f'Watchdog({self.watchdog_name}) Timeout(sec)={self.watchdog_timeout_sec}')
 
 
 if __name__ == '__main__':

@@ -32,13 +32,14 @@ class HttpEndpoints(Watchdog):
         """ Gateway Get message request using desired endpoint. """
         cpurl, resp, exception = self.__get(endpoint)
         result = self.__error_check(cpurl, resp, exception)
+        logger.log('DEBUG', f'GET({endpoint}), status={result.statusCode}, error={result.error}, msg={result.json} ')
         return result
 
     def clientrequest_post(self, endpoint=''):
         """ Gateway Post message request using desired endpoint."""
         cpurl, resp, exception = self.__post(endpoint)
-
         result = self.__error_check(cpurl, resp, exception)
+        logger.log('DEBUG', f'POST({endpoint}), status={result.statusCode}, error={result.error}, msg={result.json} ')
         return result
 
     def __build_endpoint_url(self, endpoint: str = ''):
