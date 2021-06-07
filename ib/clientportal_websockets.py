@@ -28,6 +28,7 @@ class ClientPortalWebsocketsBase:
         # Base used by all IB websocket endpoints
         self.url = 'wss://localhost:5000/v1/api/ws'
         self.connection = None
+        # default websocket 'tic' heartbeat message is 60 sec
         self.heartbeat_sec = 60
         logger.log('DEBUG', f'Clientportal (Websockets) Started with endpoint: {self.url}')
 
