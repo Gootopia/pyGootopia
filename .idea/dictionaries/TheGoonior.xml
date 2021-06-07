@@ -11,6 +11,7 @@
       <w>iserver</w>
       <w>reauthenticate</w>
       <w>testfunc</w>
+      <w>websocket</w>
     </words>
   </dictionary>
 </component>
