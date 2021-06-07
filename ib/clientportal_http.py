@@ -23,9 +23,9 @@ class ClientPortalHttp(HttpEndpoints):
 
     @overrides
     def watchdog_task(self):
-        super().watchdog_task()
+        # super().watchdog_task()
         result = self.clientrequest_authentication_status()
-        logger.log('DEBUG', f'Status: Code:{result.statusCode}, {result.error}')
+        logger.log('DEBUG', f'Watchdog(HTTP): Status: Code:{result.statusCode}, {result.error}')
 
     # TODO: Add logging wrappers
     def clientrequest_ping(self):
