@@ -29,18 +29,38 @@ class Configuration(ConfigObj):
             raise TypeError
 
     @staticmethod
-    def __findfile__(file):
-        if type(file) is str:
-            path = Path(file)
-        elif type(file) is WindowsPath:
-            path = file
+    def __walk_dir_up__(currdir:WindowsPath):
+        """ method to go up one level in a directory path """
+        if type(currdir) is not WindowsPath:
+            raise TypeError
+        # part length of 1 means we are starting at the root and can't go higher
+        if currdir.parts.__len__() == 1:
+            raise NotADirectoryError
+
+        higher_path_parts = [x for x in currdir.parts if x != currdir.stem]
+        higher_path_obj = Path()
+        for p in higher_path_parts:
+            higher_path_obj = higher_path_obj / p
+        return higher_path_obj
+
+    @staticmethod
+    def __getpath__(path):
+        """ return a path object when given either a path object or just a string """
+        if type(path) is str:
+            return Path(path)
+        elif type(path) is WindowsPath:
+            return path
         else:
             raise TypeError
+
+    @staticmethod
+    def __findfile__(file):
+        """ find a file in current path or when walking the path upwards """
+        path = Configuration.__getpath__(file)
 
         if path.exists() is not True:
             raise FileNotFoundError
 
-        x = path.absolute()
         return path.absolute()
 
     def get(self, key):

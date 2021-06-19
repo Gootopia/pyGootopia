@@ -1,5 +1,6 @@
 import pytest
 from unittest.mock import patch
+import pathlib
 from pathlib import Path
 
 from validate import ValidateError
@@ -9,6 +10,11 @@ from lib.configuration.configuration import Configuration, ConfigurationInvalidK
 
 class TestConfiguration:
     filename: str = None
+
+    @staticmethod
+    def test_static():
+        x='testing'
+        y=x
 
     def file_not_found(self):
         """ patch method to mock when a file doesn't exist """
@@ -37,6 +43,26 @@ class TestConfiguration:
     def test_findfile_file_ok_pathtype(self):
         path = Configuration.__findfile__(Path('config.ini'))
         assert path == Path('config.ini').absolute()
+
+    def test_dir_up_non_pathtype(self):
+        with pytest.raises(TypeError):
+            up = Configuration.__walk_dir_up__(0)
+
+    def test_walk_dir_up_at_top(self):
+        with pytest.raises(NotADirectoryError):
+            curr_dir = Path("c:")
+            new_dir = Configuration.__walk_dir_up__(curr_dir)
+
+    def test_walk_dir_up_ok(self):
+        curr_dir = Path("c:/dir1/dir2/dir3")
+        new_dir = Configuration.__walk_dir_up__(curr_dir)
+        assert new_dir == Path('c:/dir1/dir2')
+
+    #@patch('pathlib.Path.exists', return_value=False)
+    # def test_patcher(self):
+    #     with patch('pathlib.Path.exists', wraps=TestConfiguration.test_static) as patched_exists:
+    #         path = Configuration.__findfile__('config.ini')
+    #         p = path
 
     @patch('os.path.isfile', wraps=file_not_found)
     def test_config_not_present(self, patched):
