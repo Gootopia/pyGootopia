@@ -1,9 +1,9 @@
 # clientportal_http.py
-
 from overrides import overrides
+from loguru import logger
+
 from ib.endpoints import Endpoints
 from lib.httpendpoints import HttpEndpoints
-from loguru import logger
 
 
 class ClientPortalHttp(HttpEndpoints):

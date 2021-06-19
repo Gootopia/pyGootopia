@@ -1,7 +1,10 @@
 import pytest
 from unittest.mock import patch
-from lib.configuration.configuration import Configuration, ConfigurationInvalidKey
+from pathlib import Path
+
 from validate import ValidateError
+
+from lib.configuration.configuration import Configuration, ConfigurationInvalidKey
 
 
 class TestConfiguration:
@@ -13,6 +16,27 @@ class TestConfiguration:
         if self == TestConfiguration.filename:
             file_is_found = False
         return file_is_found
+
+    def test_findfile_invalid_type(self):
+        with pytest.raises(TypeError):
+            Configuration.__findfile__(0)
+
+    def test_findfile_bad_filename_strtype(self):
+        with pytest.raises(FileNotFoundError):
+            Configuration.__findfile__('unknown')
+
+    def test_findfile_bad_filename_pathtype(self):
+        """ TODO: Might need to check for path types other than WindowsPath """
+        with pytest.raises(FileNotFoundError):
+            Configuration.__findfile__(Path('unknown'))
+
+    def test_findfile_file_ok_strtype(self):
+        path = Configuration.__findfile__('config.ini')
+        assert path == Path('config.ini').absolute()
+
+    def test_findfile_file_ok_pathtype(self):
+        path = Configuration.__findfile__(Path('config.ini'))
+        assert path == Path('config.ini').absolute()
 
     @patch('os.path.isfile', wraps=file_not_found)
     def test_config_not_present(self, patched):
