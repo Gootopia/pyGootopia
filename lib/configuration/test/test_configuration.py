@@ -1,37 +1,61 @@
 import pytest
 from unittest.mock import patch
-import pathlib
 from pathlib import Path
 
 from validate import ValidateError
 
-from lib.configuration.configuration import Configuration, ConfigurationInvalidKey
+from lib.configuration.configuration import Configuration, ConfigurationError, ConfigurationReason
 
 
 class TestConfiguration:
-    filename: str = None
+    # list of files that are assumed to exist during testing. Set as required during specific tests
+    test_files_exist_list: list = []
 
-    @staticmethod
-    def test_static():
-        x='testing'
-        y=x
+    class TestFunctions:
+        def mock_files_exist(self):
+            """ patch method to mock that a specific file or files exist or not """
+            if TestConfiguration.test_files_exist_list.__contains__(self):
+                return True
+            else:
+                return False
 
-    def file_not_found(self):
-        """ patch method to mock when a file doesn't exist """
-        file_is_found = True
-        if self == TestConfiguration.filename:
-            file_is_found = False
-        return file_is_found
+    def test_dir_up_non_pathtype(self):
+        """ Catch when we pass something other than str or WindowsPath types """
+        with pytest.raises(TypeError):
+            up = Configuration.__walk_dir_up__(0)
+
+    def test_walk_dir_up_badpath(self):
+        """ Catch if the initial path is bad, so we'll assume that going up one level will also be bad """
+        with pytest.raises(OSError):
+            curr_dir = Path("c://badpath")
+            new_dir = Configuration.__walk_dir_up__(curr_dir)
+
+    def test_walk_dir_up_at_top(self):
+        """ Catch that we can't go any higher if we are at the root of a path structure """
+        with pytest.raises(NotADirectoryError):
+            curr_dir = Path("c:")
+            new_dir = Configuration.__walk_dir_up__(curr_dir)
+
+    @patch('pathlib.Path.exists', return_value=True)
+    def test_walk_dir_up_ok(self, patched):
+        """ Happy path test to see that we get higher path. """
+        # This is a garbage path, so we patch .exists() so it passes
+        curr_dir = Path("c:/dir1/dir2/dir3")
+        new_dir = Configuration.__walk_dir_up__(curr_dir)
+        assert new_dir == Path('c:/dir1/dir2')
 
     def test_findfile_invalid_type(self):
         with pytest.raises(TypeError):
             Configuration.__findfile__(0)
 
-    def test_findfile_bad_filename_strtype(self):
+    @patch('pathlib.Path.exists', return_value=False)
+    def test_findfile_bad_filename_strtype(self, patched):
         with pytest.raises(FileNotFoundError):
+            # 'unknown' is probably a bad file, but we patch anyway.
             Configuration.__findfile__('unknown')
 
-    def test_findfile_bad_filename_pathtype(self):
+    @patch('pathlib.Path.exists', return_value=False)
+    def test_findfile_bad_filename_pathtype(self, patched):
         """ TODO: Might need to check for path types other than WindowsPath """
         with pytest.raises(FileNotFoundError):
             Configuration.__findfile__(Path('unknown'))
@@ -44,46 +68,25 @@ class TestConfiguration:
         path = Configuration.__findfile__(Path('config.ini'))
         assert path == Path('config.ini').absolute()
 
-    def test_dir_up_non_pathtype(self):
-        with pytest.raises(TypeError):
-            up = Configuration.__walk_dir_up__(0)
-
-    def test_walk_dir_up_at_top(self):
-        with pytest.raises(NotADirectoryError):
-            curr_dir = Path("c:")
-            new_dir = Configuration.__walk_dir_up__(curr_dir)
-
-    def test_walk_dir_up_ok(self):
-        curr_dir = Path("c:/dir1/dir2/dir3")
-        new_dir = Configuration.__walk_dir_up__(curr_dir)
-        assert new_dir == Path('c:/dir1/dir2')
-
-    #@patch('pathlib.Path.exists', return_value=False)
-    # def test_patcher(self):
-    #     with patch('pathlib.Path.exists', wraps=TestConfiguration.test_static) as patched_exists:
-    #         path = Configuration.__findfile__('config.ini')
-    #         p = path
-
-    @patch('os.path.isfile', wraps=file_not_found)
+    # We are patching .isfile() and not Path.exists() because that is what is used in ConfigObj
+    @patch('os.path.isfile', wraps=TestFunctions.mock_files_exist)
     def test_config_not_present(self, patched):
-        """ Make sure we flag when default config.ini isn't found
-            Need to simulate the os isfile function since config.ini is available for other tests
-        """
-        with pytest.raises(IOError):
-            TestConfiguration.filename = 'config.ini'
+        """ Make sure we flag when default config.ini isn't found """
+        with pytest.raises(ConfigurationError) as e:
+            TestConfiguration.test_files_exist_list = []
             c = Configuration()
+        assert e.value.reason == ConfigurationReason.ConfigurationNotFound
 
-    @patch('os.path.isfile', wraps=file_not_found)
-    def test_configspec_not_present(self, patched):
-        """ Make sure we flag when default configspec.ini isn't found
-            Need to simulate the os isfile function since config.ini is available for other tests
-        """
-        with pytest.raises(IOError):
-            TestConfiguration.filename = 'config_spec.ini'
+    @patch('os.path.isfile', wraps=TestFunctions.mock_files_exist)
+    def test_config_exists_but_no_spec(self, patched):
+        """ Make sure config_spec.ini is also there """
+        with pytest.raises(ConfigurationError) as e:
+            TestConfiguration.test_files_exist_list = ['config.ini']
             c = Configuration()
+        assert e.value.reason == ConfigurationReason.SpecificationNotFound
 
-    def test_validation_failure(self):
-        """ Catch a validation error """
+    def test_config_validation_failure(self):
+        """ Catch a validation error. This uses the a test spec file to make sure it works """
         with pytest.raises(ValidateError):
             # TODO: Probably cleaner to patch the Validation function
             c = Configuration(configspec='config_spec_bad.ini')

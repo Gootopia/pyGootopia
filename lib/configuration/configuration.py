@@ -1,5 +1,5 @@
 # configuration.py
-import pathlib
+from enum import Enum
 from pathlib import Path, WindowsPath
 from configobj import ConfigObj, Section
 from validate import Validator, ValidateError
@@ -11,10 +11,31 @@ class ConfigurationInvalidKey(Exception):
         self.key = key
 
 
+class ConfigurationReason(Enum):
+    ConfigurationNotFound = 0,
+    SpecificationNotFound = 1,
+
+
+class ConfigurationError(Exception):
+    """ Information about Configuration Failures"""
+    def __init__(self, reason='Unknown', details='None'):
+        self.reason = reason
+        self.details = details
+
+
 class Configuration(ConfigObj):
     """ Wrapper for ConfigObj which allows key indexing without multi-square brackets """
     def __init__(self, infile='config.ini', configspec='config_spec.ini', delimeter='/'):
-        super().__init__(infile, configspec=configspec, file_error=True)
+        try:
+            super().__init__(infile, configspec=configspec, file_error=True)
+        except IOError as e:
+            err = ConfigurationError(details=e.args[0])
+            if e.args[0].__contains__(infile):
+                err.reason = ConfigurationReason.ConfigurationNotFound
+            elif e.args[0].__contains__(configspec):
+                err.reason = ConfigurationReason.SpecificationNotFound
+            raise err
+
         logger.log('DEBUG', f'Configuration: {infile}, Spec: {configspec}')
         validator = Validator()
         results = self.validate(validator)
@@ -33,9 +54,13 @@ class Configuration(ConfigObj):
         """ method to go up one level in a directory path """
         if type(currdir) is not WindowsPath:
             raise TypeError
-        # part length of 1 means we are starting at the root and can't go higher
+
+        # part length of 1 means we can't go any higher since we are at the root
         if currdir.parts.__len__() == 1:
             raise NotADirectoryError
+
+        if currdir.exists() is not True:
+            raise OSError
 
         higher_path_parts = [x for x in currdir.parts if x != currdir.stem]
         higher_path_obj = Path()
