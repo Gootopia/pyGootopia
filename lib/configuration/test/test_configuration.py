@@ -8,31 +8,35 @@ from lib.configuration.configuration import Configuration, ConfigurationError, C
 
 
 class TestConfiguration:
-    # list of files that are assumed to exist during testing. Set as required during specific tests
-    test_files_exist_list: list = []
-    file_numlevels_above: int = 0
+    # files in the above list are assumed to exist this many levels above (relative to local). 0 = local, 1="../", etc.
+    file_num_levels_above: int = 0
+    # exact paths to check for existence
+    test_full_path_exist_list: list = []
 
     class TestFunctions:
         @staticmethod
-        def mock_file_exist_on_higher_level():
-            """ patch method to simulate a file exists in a folder one or more levels above """
-            # If we start < 0 => we don't ever want to find the file
-            if TestConfiguration.file_numlevels_above < 0:
-                return False
+        def get_higher_path(path: Path, levels=1):
+            if path.suffix == '':
+                raise TypeError  # no suffix will be considered a bogus file (i.e: a path only). Mistake
 
-            TestConfiguration.file_numlevels_above -= 1
-            if TestConfiguration.file_numlevels_above < 0:
-                return True
-            else:
-                return False
+            path = path.absolute()
+            name = path.name
+            path = path.parent
+            while levels > 0:
+                path = path.parent
+                levels -= 1
+            path = path.joinpath(name)
+            return path
 
         @staticmethod
         def mock_files_exist(path):
             """ patch method to mock that a specific file or files exist or not """
-            if TestConfiguration.test_files_exist_list.__contains__(path):
-                return True
-            else:
-                return False
+            file_exists = False
+            # Attempting to match specific path.
+            if TestConfiguration.test_full_path_exist_list.__contains__(path):
+                file_exists = True
+
+            return file_exists
 
     def test_dir_up_non_pathtype(self):
         """ Catch when we pass something other than str or WindowsPath types """
@@ -67,64 +71,47 @@ class TestConfiguration:
         new_dir = Configuration.__walk_dir_up__(curr_dir)
         assert new_dir == Path('c:/dir1/dir2/config.ini')
 
-    def test_findfile_invalid_type(self):
-        with pytest.raises(ConfigurationError):
-            Configuration.__findfile__(0)
-
-    @patch('pathlib.Path.exists', return_value=False)
-    def test_findfile_bad_filename_strtype(self, patch1):
-        with pytest.raises(ConfigurationError) as e:
-            # 'unknown' is probably a bad file, but we patch anyway.
-            Configuration.__findfile__('unknown')
-        assert e.value.reason == ConfigurationErrorReason.SearchFailed
-
-    @patch('pathlib.Path.exists', return_value=False)
-    def test_findfile_bad_filename_pathtype(self, patch1):
-        """ TODO: Might need to check for path types other than WindowsPath """
-        with pytest.raises(ConfigurationError) as e:
-            Configuration.__findfile__(Path('unknown'))
-        assert e.value.reason == ConfigurationErrorReason.SearchFailed
-
-    def test_findfile_file_ok_strtype(self):
-        path = Configuration.__findfile__('config.ini')
-        assert path == Path('config.ini').absolute()
-
-    def test_findfile_file_ok_pathtype(self):
-        path = Configuration.__findfile__(Path('config.ini'))
-        assert path == Path('config.ini').absolute()
-
-    @patch('pathlib.Path.exists', wraps=TestFunctions.mock_file_exist_on_higher_level)
-    def test_findfile_found_on_local_level(self, patch1):
-        """ Verify file is found with default (local) search (i.e: search_level=0) """
-        higher_path = Path('config.ini').absolute().parent / 'config.ini'
-        TestConfiguration.file_numlevels_above = 0
-        found_path = Configuration.__findfile__('config.ini')
-        assert found_path == higher_path
-
-    @patch('pathlib.Path.exists', wraps=TestFunctions.mock_file_exist_on_higher_level)
-    def test_findfile_found_on_higher_level(self, patch1):
-        """ Verify we find the config files at a higher level when not found at local level """
-        higher_path = Path('config.ini').absolute().parent.parent / 'config.ini'
-        TestConfiguration.file_numlevels_above = 1
-        found_path = Configuration.__findfile__('config.ini', max_levels=1)
-        assert found_path == higher_path
-
     # We are patching .isfile() and not Path.exists() because that is what is used in ConfigObj
     @patch('os.path.isfile', wraps=TestFunctions.mock_files_exist)
-    def test_config_not_present(self, patch1):
-        """ Make sure we flag when default config.ini isn't found """
-        with pytest.raises(ConfigurationError) as e:
-            TestConfiguration.test_files_exist_list = []
-            c = Configuration()
-        assert e.value.reason == ConfigurationErrorReason.ConfigurationNotFound
+    def test_config_exists_at_local_but_no_spec(self, patch1):
+        """ Make sure config_spec.ini is also there """
+        # with pytest.raises(ConfigurationError) as e:
+        #     TestConfiguration.test_filename_exist_list = ['config.ini']
+        #     c = Configuration()
+        # assert e.value.reason == ConfigurationErrorReason.SpecificationNotFound
 
     @patch('os.path.isfile', wraps=TestFunctions.mock_files_exist)
-    def test_config_exists_but_no_spec(self, patch1):
-        """ Make sure config_spec.ini is also there """
+    def test_config_and_spec_found_local_happy(self, patch1):
+        """ Happy path to verify both files exist locally and we can pull a parameter from it """
+        TestConfiguration.test_full_path_exist_list = [(str(Path('config.ini').absolute()))]
+        TestConfiguration.test_full_path_exist_list.append(str(Path('config_spec.ini').absolute()))
+        c = Configuration()
+        val = c.get('level0_param1')
+        assert val == 1234
+
+    @patch('os.path.isfile', wraps=TestFunctions.mock_files_exist)
+    def test_config_and_spec_found_higher_level(self, patch1):
+        """ Verify we can find files one level up """
+        with pytest.raises(ValueError) as e:
+            config_path = Path('config.ini')
+            config_path = TestConfiguration.TestFunctions.get_higher_path(config_path)
+            spec_path = Path('config_spec.ini')
+            spec_path = TestConfiguration.TestFunctions.get_higher_path(spec_path)
+
+            TestConfiguration.test_full_path_exist_list = [(str(config_path))]
+            TestConfiguration.test_full_path_exist_list.append(str(spec_path))
+            c = Configuration(search_levels=1)
+        # We don't actually have config files at the higher level, so Validator will fail. We just need to catch
+        # this as it meant that ConfigObj "found" our file paths and moved on to validating the files
+        assert e.value.args[0] == 'No configspec supplied.'
+
+    @patch('os.path.isfile', wraps=TestFunctions.mock_files_exist)
+    def test_config_not_found_at_higher_level(self, patch1):
+        """ Verify we search all the way up the path to the anchor and can't find the config file """
         with pytest.raises(ConfigurationError) as e:
-            TestConfiguration.test_files_exist_list = ['config.ini']
-            c = Configuration()
-        assert e.value.reason == ConfigurationErrorReason.SpecificationNotFound
+            TestConfiguration.test_full_path_exist_list = []
+            c = Configuration(search_levels=-1)
+        assert e.value.reason == ConfigurationErrorReason.ConfigurationNotFound
 
     def test_config_validation_failure(self):
         """ Catch a validation error. This uses the a test spec file to make sure it works """

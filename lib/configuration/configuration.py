@@ -1,5 +1,7 @@
 from enum import Enum
 from pathlib import Path, WindowsPath
+
+import validate
 from configobj import ConfigObj, Section
 from validate import Validator, ValidateError
 from loguru import logger
@@ -22,14 +24,42 @@ class ConfigurationError(Exception):
 
 class Configuration(ConfigObj):
     """ Wrapper for ConfigObj which allows key indexing without multi-square brackets """
-    def __init__(self, infile='config.ini', configspec='config_spec.ini', delimeter='/'):
-        try:
-            super().__init__(infile, configspec=configspec, file_error=True)
-        except IOError as e:
-            err = ConfigurationError(details=e.args[0])
-            if e.args[0].__contains__(infile):
+    def __init__(self, infile='config.ini', configspec='config_spec.ini', search_levels=0, delimeter='/'):
+        if type(delimeter) is str:
+            self.param_delimeter = delimeter
+        else:
+            self.__logger_config(f'Configuration: Non-string delimeter ({delimeter})')
+            raise TypeError
+
+        path_config = Path(infile).absolute()
+        path_spec = Path(configspec).absolute()
+        config_files_found = True
+        file_exception = None
+
+        # If we pass -1 to search levels, we are going to search all the way up to the path anchor to find the files
+        if search_levels < 0:
+            search_levels = 10000  # Just make this some abnormally large number of file levels
+
+        while search_levels >= 0:
+            search_levels -= 1
+            try:
+                super().__init__(str(path_config), configspec=str(path_spec), file_error=True)
+            except IOError as e:
+                try:
+                    path_config = self.__walk_dir_up__(path_config)
+                    path_spec = self.__walk_dir_up__(path_spec)
+                except NotADirectoryError:
+                    config_files_found = False
+                    file_exception = e
+                    break
+            finally:
+                pass
+
+        if config_files_found is False:
+            err = ConfigurationError(details=file_exception.args[0])
+            if file_exception.args[0].__contains__(infile):
                 err.reason = ConfigurationErrorReason.ConfigurationNotFound
-            elif e.args[0].__contains__(configspec):
+            elif file_exception.args[0].__contains__(configspec):
                 err.reason = ConfigurationErrorReason.SpecificationNotFound
             raise err
 
@@ -41,36 +71,30 @@ class Configuration(ConfigObj):
             self.__logger_config(f'{infile} validation failure, {results}')
             raise ValidateError
 
-        if type(delimeter) is str:
-            self.param_delimeter = delimeter
-        else:
-            self.__logger_config(f'Configuration: Non-string delimeter ({delimeter})')
-            raise TypeError
-
     @staticmethod
     def __logger_config(msg, level='DEBUG'):
         """ Consistent message format for logging"""
         logger.log(level, f'Configuration:{msg}')
 
     @staticmethod
-    def __walk_dir_up__(currdir:WindowsPath):
+    def __walk_dir_up__(dir_path: Path):
         """ method to go up one level in a directory path """
-        if type(currdir) is not WindowsPath:
+        if isinstance(dir_path, Path) is False:
             raise TypeError
 
-        if currdir.exists() is not True:
-            raise OSError
-
         # blank name means we are at the top level
-        if currdir.name == '':
+        if dir_path.name == '':
             raise NotADirectoryError
 
-        new_dir = currdir.parent
+        new_dir = dir_path.parent
 
         # if there's a suffix, it's a file, so we need to append the file name to create a full path
-        if currdir.suffix != '':
+        if dir_path.suffix != '':
             # Since the filename is rightmost item, we need parent of parent or we'll return the current folder
-            new_dir = new_dir.parent / currdir.name
+            new_dir = new_dir.parent / dir_path.name
+
+        if dir_path.parts.__len__() == 2 and dir_path.parts[0] == dir_path.anchor:
+            raise NotADirectoryError
 
         return new_dir
 
@@ -90,22 +114,6 @@ class Configuration(ConfigObj):
 
         path_obj = path_obj.absolute()
         return path_obj
-
-    @staticmethod
-    def __findfile__(file, max_levels=0, stop_folder=''):
-        """ find a file in current path or when walking the path upwards """
-        path = Configuration.__getpath__(file)
-
-        if path.exists() is not True:
-            max_levels -= 1
-            if max_levels >= 0:
-                path = Configuration.__walk_dir_up__(path)
-            else:
-                err = ConfigurationError(ConfigurationErrorReason.SearchFailed,
-                                         details=f'file "{path.name}" not found.')
-                raise err
-
-        return path.absolute()
 
     def get(self, key):
         """ return parameter using multi level indexing similar to file paths:
