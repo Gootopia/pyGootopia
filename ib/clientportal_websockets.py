@@ -1,11 +1,13 @@
 # clientportal_websockets.py
-
 import asyncio
 import websockets
 from concurrent.futures import ThreadPoolExecutor
 from enum import Enum
-from lib.certificate import Certificate, CertificateError
+from pathlib import Path
+
 from loguru import logger
+
+from lib.certificate import Certificate, CertificateError
 
 
 class ClientPortalWebsocketsError(Enum):
@@ -23,7 +25,6 @@ class ClientPortalWebsocketsBase:
     Refer to https://interactivebrokers.github.io/cpwebapi/RealtimeSubscription.html for API documentation
     NOTE: Websocket usage also requires the UI to send the /tickle endpoint. See Websocket Ping Session docs.
     """
-
     def __init__(self):
         # Base used by all IB websocket endpoints
         self.url = 'wss://localhost:5000/v1/api/ws'
