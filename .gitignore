@@ -15,8 +15,6 @@ requirements/~$oIB_Requirements.docx
 
 requirements/~$pyGooIbClient Requirements.xlsx
 
-sandbox/
-
 *.pem
 
 *.crt
