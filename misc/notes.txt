@@ -1,0 +1,13 @@
+- Helpful to install ConEMU for split screen emulation
+- virtualenv is also handy
+- shebang in ros2 is for Python3.8 (c:\python38\python.exe). If you have a different version or path, you need to modify the shebang in ros python files for the various demos (e.g: Lib\demo_nodes_py\listener_script.py).
+  This will allow you to run the demo as shown in the tutorial (cpp talker, python listener)
+- if "ros2" command doesn't work, make sure you have run the "local_setup.bat" (cmd) or "local_setup.ps1" (powershell).
+- if ros2 command doesn't work (fail to create process, etc), check the shebang in "ros2-script.py" in the ros2_galactic (or whatever version you are using) scripts folder
+- the talker/listener demo will let you know if things are installed correctly
+- sometimes may need to install some additional packages using pip (like lark & packaging)
+- "ros2 doctor" will give some diagnostics on the installation state. Doesn't fix everything, but may give more info on why something isn't working.
+- if problems with qt are present, make sure QT_QPA_PLATFORM_PLUGIN_PATH is set to the qwindows.dll component in ros ($env:QT_QPA_PLATFORM_PLUGIN_PATH = 'C:\dev\ros2_galactic\bin\platforms' in powershell)
+- To build ROS 2 you will need a Visual Studio Command Prompt (“x64 Native Tools Command Prompt for VS 2019”) running as Administrator.
+- if openssl gives build errors during colcon build, make sure the environment variable was set up during installation (see Windows installation, setx command for OpenSSL)
+- https://github.com/ros2/rclcpp/issues/1688 may help solve a bunch of errors with the c:\ci path during colcon build. Just make new a new folder at that path and it seems to work (rather then edit the specific files)

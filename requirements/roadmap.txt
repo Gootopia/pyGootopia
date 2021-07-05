@@ -1,0 +1,3 @@
+- pyibclient = Ib web client interface (http & websockets)
+- pyibros2 = ros2 interface to the pyibclient
+- pygootrader = algorithmic trading system using Yakindu state charts
