@@ -3,7 +3,6 @@ import asyncio
 import websockets
 from concurrent.futures import ThreadPoolExecutor
 from enum import Enum
-from pathlib import Path
 
 from loguru import logger
 
